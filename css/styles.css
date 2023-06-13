@@ -4,7 +4,16 @@
     height: 100%;
 }
 
+panel  {
+    border: solid;
+}
 
+h1  {
+    text-justify: center;
+    font-family: sans-serif;
+    font-weight: bold;
+
+    }
 footer {
     background-color: white;
     height: 40%;
