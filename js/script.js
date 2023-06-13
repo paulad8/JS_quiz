@@ -19,7 +19,7 @@ function buildQuiz() {
                 // ... add an HTML radio button
                 answers.push(
                     `<label>
-                  < input type = "radio" name = "question${questionNumber}" value = "${letter}" >
+                  < input type = "radio" name = "question${questionNumber}" value = "${letter}" />
               ${letter} :
                   ${currentQuestion.answers[letter]}
                   </label>`
@@ -27,10 +27,11 @@ function buildQuiz() {
             }
 
             // add this question and its answers to the output by using template literals
-            //  using a template literal and some embedded expressions to first create the question div and then create the answer div
-            // the 'join' expression takes the list of answers and puts them together in one string that can be output into the 'answers' div
+            /*  using a template literal and some embedded expressions to first create the question div and then create the answer div */
+        /* the 'join' expression takes the list of answers and puts them together in one string that can be output into the 'answers' div */
+
             output.push(
-                `<div class="#"> ${currentQuestion.question} </div>
+                `<div class="question"> ${currentQuestion.question} </div>
               <div class="answers"> ${answers.join('')} </div>`
             );
         }
@@ -49,7 +50,7 @@ const resultsContainer = document.getElementById('result');
 const submitButton = document.getElementById('submit');
 
 //display the quiz questions
-//using *object literals* to represent the individual questions and an array to hold all of the questions that make up the quiz, will be easier to iterate over//
+/* using *object literals* to represent the individual questions and an array to hold all of the questions that make up the quiz, will be easier to iterate over */
 
 const myQuestions = [
 
