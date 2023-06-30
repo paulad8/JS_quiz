@@ -19,7 +19,7 @@ function buildQuiz() {
                 // ... add an HTML radio button
                 answers.push(
                     `<label>
-                  < input type = "radio" name = "question${questionNumber}" value = "${letter}" />
+                  <input type = "radio" name = "question${questionNumber}" value = "${letter}" />
               ${letter} :
                   ${currentQuestion.answers[letter]}
                   </label>`
@@ -31,8 +31,10 @@ function buildQuiz() {
         /* the 'join' expression takes the list of answers and puts them together in one string that can be output into the 'answers' div */
 
             output.push(
-                `<div class="question"> ${currentQuestion.question} </div>
-              <div class="answers"> ${answers.join("")} </div>`
+                `<div class="slide">
+                <div class="question"> ${currentQuestion.question} </div>
+              <div class="answers"> ${answers.join("")} </div>
+              </div>`
             );
         }
     );
@@ -80,7 +82,7 @@ function showResults() {
 
 // declare variables to store references
 const quizContainer = document.getElementById('quiz');
-const resultsContainer = document.getElementById('result');
+const resultsContainer = document.getElementById('results');
 const submitButton = document.getElementById('submit');
 
 //display the quiz questions
@@ -89,171 +91,171 @@ const submitButton = document.getElementById('submit');
 const myQuestions = [
 
     {
-        question: "What is the name of the company that published the Mario Kart video game?",
+        question: "Where are the Whitsunday Islands located?",
         answers: {
-            a: "Nintendo",
-            b: "Electronic Arts (EA)",
-            c: "SEGA",
-            d: "Xbox"
-        },
-        correctAnswer: "a"
-    },
-
-    {
-        question: "How many elements are there on a periodic table?",
-        answers: {
-            a: "112",
-            b: "118",
-            c: "120",
-            d: "143"
-        },
-        correctAnswer: "b"
-
-    },
-
-    {
-        question: "In the U.S version of The Office, Michael Scott burns his foot on: ",
-        answers: {
-            a: "hot water",
-            b: "pavement/cement",
-            c: "rocks on fire",
-            d: "a George Foreman Grill"
+            a: "Malaysia",
+            b: "Vietnam",
+            c: "Philippines",
+            d: "Australia"
         },
         correctAnswer: "d"
+    },
+
+    {
+        question: "Which of these countries ISN’T landlocked?",
+        answers: {
+            a: "Nepal",
+            b: "Turkey",
+            c: "Armenia",
+            d: "Austria"
+        },
+        correctAnswer: "b"
 
     },
 
     {
-        question: "Which actor performs music under the stage name Childish Gambino?",
+        question: "The Spanish Steps are found in which city?",
         answers: {
-            a: "Donald Glover",
-            b: "Will Smith",
-            c: "Frank Ocean",
-            d: "Tyler, The Creator"
+            a: "Rome",
+            b: "Barcelona",
+            c: "Madrid",
+            d: "Lisbon"
         },
         correctAnswer: "a"
+
     },
 
     {
-        question: "As an adult, how many teeth should you have in your mouth?",
+        question: "Which two countries in South America are the Iguazu Falls part of?",
         answers: {
-            a: "35",
-            b: "32",
-            c: "30",
-            d: "42"
+            a: "Ethiopia and Kenya",
+            b: "Panama and Chile",
+            c: "Brazil and Argentina",
+            d: "Colombia and Brazil"
+        },
+        correctAnswer: "c"
+    },
+
+    {
+        question: "Which of these is NOT a South African national park? ",
+        answers: {
+            a: "Addo Elephant Park",
+            b: "Kruger National Park",
+            c: "Table Mountain National Park",
+            d: "Goreme National Park"
+        },
+        correctAnswer: "d"
+    },
+
+    {
+        question: "Where in the Middle East is the ancient city of Petra?",
+        answers: {
+            a: "Qatar",
+            b: "Jordan ",
+            c: "Egypt",
+            d: "Morocco"
         },
         correctAnswer: "b"
     },
 
     {
-        question: "Which country held the 2016 Summer Olympics?",
+        question: "The Aruba Caribbean island is a territory of which European country?",
+        answers: {
+            a: "France",
+            b: "Netherlands",
+            c: "Finland",
+            d: "Croatia"
+        },
+        correctAnswer: "b"
+    },
+
+    {
+        question: "What is the capital of Canada?",
+        answers: {
+            a: "Toronto",
+            b: "Vancouver",
+            c: "Ottawa",
+            d: "Halifax"
+        },
+        correctAnswer: "c"
+    },
+
+    {
+        question: "Hanoi is the capital of which country?",
+        answers: {
+            a: "Cambodia",
+            b: "Laos",
+            c: "Thailand",
+            d: "Vietnam"
+        },
+        correctAnswer: "d"
+    },
+
+    {
+        question: "Which of these buildings is the tallest? ",
+        answers: {
+            a: "The Shard, London",
+            b: "Tokyo Skytree, Tokyo",
+            c: "Burj Kalifa, Dubai",
+            d: "Ostankino Tower, Moscow"
+        },
+        correctAnswer: "c"
+    },
+
+    {
+        question: "The Baltic States refer to which countries?",
+        answers: {
+            a: "Iceland, Norway, UK",
+            b: "Poland, Czech Republic, Austria",
+            c: "Estonia, Latvia, Lithuania",
+            d: "Croatia, Slovenia, Italy"
+        },
+        correctAnswer: "c"
+    },
+
+    {
+        question: "Which city is home to the Brandenburg Gate?",
+        answers: {
+            a: "Vienna",
+            b: "Bruge",
+            c: "Zurich",
+            d: "Berlin"
+
+        },
+        correctAnswer: "d"
+    },
+
+    {
+        question: "Where was the first example of paper money used?",
         answers: {
             a: "China",
-            b: "Ireland",
-            c: "Brazil",
-            d: "italy"
-        },
-        correctAnswer: "c"
-    },
-
-    {
-        question: "Who painted the Sistine Chapel ceiling?",
-        answers: {
-            a: "Picasso",
-            b: "Da Vinci",
-            c: "Michaelangelo",
-            d: "Van Gogh"
-        },
-        correctAnswer: "c"
-    },
-
-    {
-        question: "In 2016, a musician won the Nobel Peace Prize for Literature. Who was it?",
-        answers: {
-            a: "Lenny Kravitz",
-            b: "Eric Clapton",
-            c: "Bob Dylan",
-            d: "Elton John"
-        },
-        correctAnswer: "c"
-    },
-
-    {
-        question: "What is Sodium Chloride?",
-        answers: {
-            a: "Salt",
-            b: "Sugar",
-            c: "Chlorine",
-            d: "Bleach"
+            b: "Greece",
+            c: "Turkey",
+            d: "Britannia"
         },
         correctAnswer: "a"
     },
 
     {
-        question: "How many time zones are there in the world?",
+        question: "Which language has the longest alphabet?",
         answers: {
-            a: "7",
-            b: "24",
-            c: "23",
-            d: "9"
-        },
-        correctAnswer: "b"
-    },
-
-    {
-        question: "What is the deadliest snake?",
-        answers: {
-            a: "Python",
-            b: "Cobra",
-            c: "Eastern Brown Snake",
-            d: "Black Mamba"
+            a: "Greek",
+            b: "Arabic",
+            c: "Roman",
+            d: "Russian"
         },
         correctAnswer: "d"
     },
 
     {
-        question: "In Greek mythology, who is the Queen of the Underworld?",
+        question: "Which of the following was considered one of the Seven Ancient Wonders?",
         answers: {
-            a: "Pandora",
-            b: "Medusa",
-            c: "Helen",
-            d: "Persephone"
-
+            a: "Colosseum",
+            b: "Great Wall of China",
+            c: "Colossus of Rhodes",
+            d: "Ancient city of Ephesus"
         },
-        correctAnswer: "b"
-    },
-
-    {
-        question: "Which biblical narrative is connected to Palm Sunday?",
-        answers: {
-            a: "Jesus' entry into Jerusalem",
-            b: "Jesus' resurrection",
-            c: "Jesus feeding the thousands",
-            d: "Nothing, it just means to go to church on Sunday - the day of rest"
-        },
-        correctAnswer: "a"
-    },
-
-    {
-        question: "Which planet is the hottest?",
-        answers: {
-            a: "Venus",
-            b: "Saturn",
-            c: "Mercury",
-            d: "Mars"
-        },
-        correctAnswer: "a"
-    },
-
-    {
-        question: "Which poet wrote the poem 'The Raven'?",
-        answers: {
-            a: "Robert Frost",
-            b: "Edgar Allan Poe",
-            c: "Walt Whitman",
-            d: "Sylvia Plath"
-        },
-        correctAnswer: "b"
+        correctAnswer: "c"
     },
 ];
 
