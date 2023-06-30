@@ -1,24 +1,55 @@
-﻿body  {
-    display: flex;
-    background-color: aliceblue;
+﻿/* GOOGLE FONTS IMPORT */
+
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau+Office:wght@700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau:wght@300&display=swap');
+
+body {
     height: 100%;
 }
 
-panel  {
+.quiz-container  {
+    background-color: aliceblue;
     border: solid;
+    border-color: white;
+    position: center;
 }
 
 h1  {
-    text-justify: center;
+    text-align: center;
     font-family: sans-serif;
     font-weight: bold;
 
     }
 footer {
+    text-align: center;
     background-color: white;
     height: 40%;
 }
 
+.masthead  {
+    background-size: cover;
+    min-height: 100vh;
+    position: relative;
+    color: black;
+    text-shadow: 2px 2px 2px rgb(240,248,255);
+}
+
+h1 {
+    font-family: 'Ysabeau Office', sans-serif;
+    font-size: 4rem;
+}
+
+h2 {
+    font-family: 'Ysabeau Office', sans-serif;
+    font-size: 2rem;
+}
+
+.color-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%
+}
 
 .btn-light {
     background-color: white;
@@ -35,12 +66,9 @@ footer {
 }
 
 
- #header {
-    display: block;
-    background-color: white;
-    height: 15%;
-}
+ 
 
 
+<a href="https://www.freepik.com/free-vector/business-startup-with-businessman-flying-rocket_22535555.htm#page=2&query=doodling&position=2&from_view=search&track=sph#position=2&page=2&query=doodling" > Image by upklyak</a > on Freepik
 
-   
+Image by <a href="https://www.freepik.com/free-vector/hand-drawn-world-tourism-day-background_29889527.htm#query=doodling%20travel&position=21&from_view=search&track=ais" > Freepik</a >
