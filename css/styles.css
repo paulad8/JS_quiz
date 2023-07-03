@@ -4,8 +4,18 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Ysabeau:wght@300&display=swap');
 
-body {
-    height: 100%;
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.flex-container  {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100wh;
+    justify-content: center;
+    align-content: center;
 }
 
 .quiz-container  {
@@ -15,12 +25,7 @@ body {
     position: center;
 }
 
-h1  {
-    text-align: center;
-    font-family: sans-serif;
-    font-weight: bold;
-
-    }
+    
 footer {
     text-align: center;
     background-color: white;
