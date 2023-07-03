@@ -1,4 +1,5 @@
-﻿
+﻿(function () {
+
 // Functions
 
 function buildQuiz() {
@@ -20,15 +21,13 @@ function buildQuiz() {
                 answers.push(
                     `<label>
                   <input type = "radio" name = "question${questionNumber}" value = "${letter}" />
-              ${letter} :
-                  ${currentQuestion.answers[letter]}
-                  </label>`
+              ${letter} : ${currentQuestion.answers[letter]} </label> </br>` 
                 );
             }
 
-            // add this question and its answers to the output by using template literals
-            /*  using a template literal and some embedded expressions to first create the question div and then create the answer div */
-        /* the 'join' expression takes the list of answers and puts them together in one string that can be output into the 'answers' div */
+// add this question and its answers to the output by using template literals
+/*  using a template literal and some embedded expressions to first create the question div and then create the answer div */
+/* the 'join' expression takes the list of answers and puts them together in one string that can be output into the 'answers' div */
 
             output.push(
                 `<div class="slide">
@@ -43,9 +42,11 @@ function buildQuiz() {
     quizContainer.innerHTML = output.join('');
 }
 
+
+
 function showResults() {
 
-// gather answer containers from our quiz
+    // gather answer containers from our quiz
     const answerContainers = quizContainer.querySelectorAll('.answers');
 
     // keep track of user's answers
@@ -79,6 +80,37 @@ function showResults() {
     resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
 
 }
+
+function showSlide(n) {
+
+    slides[currentSlide].classList.remove('active-slide');
+    slides[n].classList.add('active-slide');
+    currentSlide = n;
+    if (currentSlide === 0) {
+        previousButton.style.display = 'none';
+    }
+    else {
+        previousButton.style.display = 'inline-block';
+    }
+    if (currentSlide === slides.length-1) {
+        nextButton.style.display = 'none';
+        submitButton.style.display = 'inline-block';
+    }
+    else {
+        nextButton.style.display = 'inline-block';
+        submitButton.style.display = 'none';
+    }
+}
+
+function showNextSlide() {
+    showSlide(currentSlide + 1);
+}
+
+function showPreviousSlide() {
+    showSlide(currentSlide - 1);
+}
+
+
 
 // declare variables to store references
 const quizContainer = document.getElementById('quiz');
@@ -262,7 +294,21 @@ const myQuestions = [
 // Kick things off 
 buildQuiz();
 
+// Pagination
+
+const previousButton = document.getElementById("previous");
+const nextButton = document.getElementById("next");
+const slides = document.querySelectorAll(".slide");
+let currentSlide = 0;
+
+// Show the first slide
+showSlide(currentSlide);
+
 // Event listener: on submit, show the result
-submitButton.addEventListener('click', showResults);
+submitButton.addEventListener("click", showResults);
+previousButton.addEventListener("click", showPreviousSlide);
+nextButton.addEventListener("click", showNextSlide);
+
+}) ();
 
 
