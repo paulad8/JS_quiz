@@ -92,7 +92,7 @@ function showSlide(n) {
     else {
         previousButton.style.display = 'inline-block';
     }
-    if (currentSlide === slides.length-1) {
+    if (currentSlide === slides.length - 1) {
         nextButton.style.display = 'none';
         submitButton.style.display = 'inline-block';
     }
@@ -305,9 +305,9 @@ let currentSlide = 0;
 showSlide(currentSlide);
 
 // Event listener: on submit, show the result
-submitButton.addEventListener("click", showResults);
-previousButton.addEventListener("click", showPreviousSlide);
-nextButton.addEventListener("click", showNextSlide);
+submitButton.addEventListener('click', showResults);
+previousButton.addEventListener('click', showPreviousSlide);
+nextButton.addEventListener('click', showNextSlide);
 
 }) ();
 
