@@ -9,69 +9,114 @@
     margin: 0;
 }
 
-.flex-container  {
+body {
+    color: white;
+}
+
+footer {
+    height: auto;
+    background-color: white;
+}
+
+.container  {
     display: flex;
     flex-direction: column;
-    width: 100vw;
-    height: 100vh;
+    flex-wrap: wrap;
     justify-content: center;
-    align-content: center;
 }
 
 
-    
-footer {
+.credits  {
     text-align: center;
-    background-color: white;
-    height: 40vh;
+    vertical-align: middle;
+    font-size: .8rem;
+    font-family: sans-serif;
+    margin-top: 25px;
+    padding: 10px;
+    color: black;
+
 }
 
-.masthead  {
+.masthead {
+    background: url('assets/7618808.jpg') no-repeat center fixed;
     background-size: cover;
-    max-width: 1310px;
-    min-height: 100vh;
-    position: center;
+    
 }
+
 
 h1 {
     font-family: 'Ysabeau Office', sans-serif;
     font-size: 4rem;
     color: black;
-    text-shadow: 2px 2px 2px rgb(240,248,255)
+    text-align: center;
+    text-shadow: 2px 2px 2px rgb(240,248,255);
+    padding: 25px 0 40px 0;
 }
 
 h2 {
     font-family: 'Ysabeau Office', sans-serif;
     font-size: 2rem;
+    color: black;
+    text-align: center;
+    text-shadow: 2px 2px 2px rgb(240,248,255);
+    padding: 0 0 20px 0;
 }
 
-.color-overlay {
-    width: 100%;
-    height: 100%
+h3  {
+    font-family: sans-serif;
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+    color: black;
+    text-align: center;
+    vertical-align: middle;
+    padding: 25px 50px;
 }
+
+
+
+.game-container {
+    width: 70%;
+    height: auto;
+    max-width: 680px;
+    min-height: 440px;
+    background-color: #bde3ff;
+    color: black;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 4px 8px 4px rgb(225,225,225);
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+}
+
 
 .quiz-container  {
-    position: relative;
     max-width: 680px;
     min-height: 440px;
     background-color: #bde3ff;
     color: black;
     margin-top: 40px;
+    
 }
 
-.btn-light {
+.play  {
+    align-self: flex-end;
+
+}
+
+button {
     background-color: white;
-    outline: none;
-    border: none;
-    box-shadow: none;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgb(225,225,225);
+    color: rgb(88, 88, 88);
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 10px 35px;
+    margin: 10px 25px;
 }
 
-.btn-light:hover {
-    background-color: lightgrey;
-    outline: none;
-    border: none;
-    box-shadow: none;
-}
 
 .slide  {
     position: absolute;
