@@ -1,4 +1,4 @@
-﻿/* GOOGLE FONTS IMPORT */
+﻿
 
 @import url('https://fonts.googleapis.com/css2?family=Ysabeau+Office:wght@700&display=swap');
 
@@ -16,13 +16,16 @@ body {
 footer {
     height: auto;
     background-color: white;
+    display: block;
 }
 
-.container  {
+.flex-container  {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: nowrap;
+    width: auto;
+    height: 100vh;
+    
 }
 
 
@@ -38,11 +41,160 @@ footer {
 }
 
 .masthead {
-    background: url('assets/7618808.jpg') no-repeat center fixed;
+    background-position: center;
     background-size: cover;
+    
     
 }
 
+
+.start-game-area {
+    width: 60%;
+    height: auto;
+    max-width: 500px;
+    background-color: #bde3ff;
+    color: black;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    box-shadow: 4px 8px 4px rgb(225,225,225);
+    display: block;
+    align-items: center;
+    text-align: center;
+
+}
+
+.game-header {
+    width: auto;
+    height: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px 0 15px;
+}
+
+.difficulty-game-area {
+    width: 60%;
+    height: auto;
+    max-width: 500px;
+    background-color: #bde3ff;
+    color: black;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    box-shadow: 4px 8px 4px rgb(225,225,225);
+    display: block;
+    align-items: center;
+    text-align: center;
+}
+
+.question-game-area {
+    width: 60%;
+    height: auto;
+    max-width: 500px;
+    background-color: #bde3ff;
+    color: black;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    box-shadow: 4px 8px 4px rgb(225,225,225);
+    display: block;
+    align-items: center;
+    text-align: center;
+}
+
+.current-question  {
+    font-size: .8rem;
+    font-family: sans-serif;
+
+}
+
+.home-icon {
+    width: 38px;
+    cursor: pointer;
+}
+
+.help-icon  {
+    width: 38px;
+    cursor: pointer;
+}
+
+.cross  {
+    width: 38px;
+    height: 38px;
+    cursor: pointer;
+    position: absolute;
+    right: 3%;
+    color: black;
+}
+
+.hide  {
+    display: none;
+}
+
+.hover:hover {
+    cursor: pointer;
+    background-color: #176087;
+    color: white;
+    border: solid 2pt white;
+    box-shadow: none;
+}
+
+.modal-container  {  
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+
+    
+}
+
+.modal-container.show  {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.modal {
+    max-width: 500px;
+    height: auto;
+    background-color: #bde3ff;
+    border-radius: 10px;
+    box-shadow: 4px 8px 4px rgb(225,225,225);
+    padding: 0 10px;
+    
+}
+
+.modal-header  {
+    margin-top: 10px;
+    width: auto;
+    height: 50px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p  {
+    font-family: sans-serif;
+   
+}
 
 h1 {
     font-family: 'Ysabeau Office', sans-serif;
@@ -50,7 +202,7 @@ h1 {
     color: black;
     text-align: center;
     text-shadow: 2px 2px 2px rgb(240,248,255);
-    padding: 25px 0 40px 0;
+    padding: 25px 0 25px 0;
 }
 
 h2 {
@@ -59,63 +211,51 @@ h2 {
     color: black;
     text-align: center;
     text-shadow: 2px 2px 2px rgb(240,248,255);
-    padding: 0 0 20px 0;
+    padding: 20px 0 20px 0;
 }
 
-h3  {
-    font-family: sans-serif;
+h3 {
     font-size: 1.3rem;
     line-height: 1.8rem;
     color: black;
     text-align: center;
     vertical-align: middle;
-    padding: 25px 50px;
+    justify-content: center;
+    padding: 25px 25px;
 }
 
-
-
-.game-container {
-    width: 70%;
-    height: auto;
-    max-width: 680px;
-    min-height: 440px;
-    background-color: #bde3ff;
-    color: black;
-    margin: auto;
-    border-radius: 10px;
-    box-shadow: 4px 8px 4px rgb(225,225,225);
-    display: flex;
-    align-items: center;
-    text-align: center;
-
+h5 {
+    font-size: .9rem;
+    line-height: 1.5rem;
+    color: rgb(88, 88, 88);
+    padding: 0 35px 35px 35px;
 }
 
-
-.quiz-container  {
-    max-width: 680px;
-    min-height: 440px;
-    background-color: #bde3ff;
-    color: black;
-    margin-top: 40px;
-    
-}
-
-.play  {
-    align-self: flex-end;
-
+p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: rgb(88, 88, 88);
+    padding: 0 35px 35px 35px;
 }
 
 button {
     background-color: white;
     border: 0;
     border-radius: 5px;
-    box-shadow: 0 2px 4px rgb(225,225,225);
+    box-shadow: 0 2px 4px rgb(188,188,188);
     color: rgb(88, 88, 88);
     font-size: 1rem;
     font-weight: 500;
     padding: 10px 35px;
     margin: 10px 25px;
 }
+
+    button:active {
+        background-color: lightgrey;
+        box-shadow: 0 2px 4px rgb(188,188,188);
+        color: rgb(88, 88, 88);
+        outline: none;
+    }
 
 
 .slide  {
