@@ -23,49 +23,122 @@
     <title>Quizly</title>
 
     <!-- Stylesheets -->
-    
+
     <link href="css/styles.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/d214f544e6.js" crossorigin="anonymous"></script>
 
 </head>
 
-<body class="container">
+<body class="flex-container">
 
     <!-- Outer container that holds the content -->
-    <div class="masthead">
+    <div class="masthead" style="background-image: url('assets/7618808.jpg')">
 
         <!-- Inner container -->
-        <div class="inner-container">
+        <div class="flex-container" id="main">
 
-            <h1>Quizly</h1> 
+            <h1>Quizly</h1>
 
             <h2>Around the World Trivia</h2>
-            <!-- Quizly container that holds the questions, results and button navigation containers -->
-            <div class="game-container" id="game">
 
-                    <h3>Answer 15 multiple choice questions and test your world knowledge</h3>
-                
-                
-                    <div class="navigation">
-                        <button>Play</button>
+            <!-- Start section -->
+            <section class="start-game-area hide" id="start-game-area">
+                <div class="game-start" id="game-start-text">
+
+                    <h3>Hello there! </h3>
+
+                    <p>Are you ready to put your knowledge of the world to the test? This quiz is designed to test your knowledge of various topics related to the world.</p>
+
+                    <p>So, get ready to flex your brain muscles and see how much you know about the world around you. Good luck! </p>
+
+
+                    <div class="button">
+                        <button type="button" class="hover" id="play">Let's Go!</button>
                     </div>
 
-            </div>
-            
+                </div>
+            </section>
 
+            <!-- Difficulty section -->
+            <section class="difficulty-game-area hide" id="difficulty-game-area">
+                <div class="game-header">
+                    <div class="home-icon">
+                        <a href="index.html">
+                            <img border="0" alt="home" src="assets/icons8-home-48.svg" width="38px" height="auto" />
+                        </a>
+                    </div>
+                    <div class="help-icon">
+                        <a href="#" id="help">
+                            <img border="0" alt="help" src="assets/icons8-help-48.png" width="38px" height="auto" />
+                        </a>
+                    </div>
+                </div>
 
+                <div class="difficulty-title-text">
+                    <h3>Select Difficulty</h3>
+                </div>
+
+                <div class="difficulty-body-text">
+                    <p>Choose a level to test your knowledge.</p>
+                </div>
+                <div class="difficulty-btn">
+                    <button aria-label="#" class="hover" value="easy" id="difficulty-easy">Easy</button>
+                    <button aria-label="#" class="hover" value="hard" id="difficulty-hard">Hard</button>
+                </div>
+            </section>
+
+            <!-- Question section -->
+
+            <section class="question-game-area" id="question-game-area">
+                <div class="game-header">
+                    <div class="current-question">Question
+                    <span class="show-current-question">1</span>/10</div>
+                </div>
+                <div class="question-body-text" >
+                    <h2 id="question-text"></h2>
+                </div>
+                <div class="answer-buttons">
+                    <button aria-label="Answer Button 1" id="answer1-btn" class="answer-btn answer-buttons-hover" value="a">Answer 1</button>
+                    <button aria-label="Answer Button 2" id="answer2-btn" class="answer-btn answer-buttons-hover" value="b">Answer 2</button>
+                    <button aria-label="Answer Button 3" id="answer3-btn" class="answer-btn answer-buttons-hover" value="c">Answer 3</button>
+                    <button aria-label="Answer Button 4" id="answer4-btn" class="answer-btn answer-buttons-hover" value="d">Answer 4</button>
+                </div>
+                <div class="next-question">
+                    <button aria-label="Next Question" id="next-question" class="#"><i class="fa-solid fa-circle-chevron-right" style="color: #000000;"></i></button>
+                </div>
+                                    
+            </section>
         </div>
 
     </div>
 
     <!-- Footer -->
-    <footer class="credits">&copy; Paula De Amicis 2023</footer>
+    <footer class="credits">&copy; PAULA DE AMICIS 2023 -- MILESTONE PROJECT 2 | CODE INSTITUTE</footer>
+
+    <!-- Modal -->
+    <div class="modal-container" id="modal_container">
+
+        <div class="modal">
+            <div class="modal-header">
+                <div class="cross" id="close">&times;</div>
+            </div>
+
+            <div class="modal-body">
+                <h3>How to play</h3>
+
+                <p>Start by selecting your level of difficulty. If you're feeling shaky, go <i>EASY</i> and answer 15 multiple choice questions to find out what you know (or don't!).</p>
+                <p>Feeling confident? Try <i>HARD</i> and answer 15 open-ended questions to see just how much you do know.</p>
+
+                <h1>Go Quizly!</h1>
+            </div>
+
+        </div>
+
+    </div>
 
     <!-- JavaScript - jQuery & my JS -->
-    <script type="text/javascript" src="js/script.js"></script>
-
-    
-
-
+    <script type="text/javascript" src="js/modal.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
 </body>
 
 </html>
