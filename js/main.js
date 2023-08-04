@@ -25,6 +25,7 @@ difficultyEasyBtn.addEventListener("click", runQuiz);
 
 document.getElementById("play").addEventListener("click", toDifficultyGameArea);
 
+
 //
 
 /** When the play clicks 'Let's Go!', hides the start-game-area and shows the difficulty-game-area **/
@@ -40,7 +41,7 @@ function toDifficultyGameArea() {
 */
 
 function runQuiz()
-    let difficulty = event.target.value;
+var difficulty = event.target.value;
 
 if (difficulty === "easy") {
     shuffledQuestions = easyQuestions.sort(() => Math.random() - 0.5);
