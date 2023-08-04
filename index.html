@@ -42,7 +42,7 @@
             <h2>Around the World Trivia</h2>
 
             <!-- Start section -->
-            <section class="start-game-area hide" id="start-game-area">
+            <section class="start-game-area " id="start-game-area">
                 <div class="game-start" id="game-start-text">
 
                     <h3>Hello there! </h3>
@@ -63,14 +63,10 @@
             <section class="difficulty-game-area hide" id="difficulty-game-area">
                 <div class="game-header">
                     <div class="home-icon">
-                        <a href="index.html">
-                            <img border="0" alt="home" src="assets/icons8-home-48.svg" width="38px" height="auto" />
-                        </a>
+                        <i class="fa-solid fa-house fa-xl" style="color: #0a2239;"></i>
                     </div>
-                    <div class="help-icon">
-                        <a href="#" id="help">
-                            <img border="0" alt="help" src="assets/icons8-help-48.png" width="38px" height="auto" />
-                        </a>
+                    <div class="help-icon" id="help">
+                        <i class="fa-regular fa-circle-question fa-xl" style="color: #0a2239;"></i>
                     </div>
                 </div>
 
@@ -82,14 +78,14 @@
                     <p>Choose a level to test your knowledge.</p>
                 </div>
                 <div class="difficulty-btn">
-                    <button aria-label="#" class="hover" value="easy" id="difficulty-easy">Easy</button>
-                    <button aria-label="#" class="hover" value="hard" id="difficulty-hard">Hard</button>
+                    <button aria-label="Easy" class="hover" value="easy" id="difficulty-easy">Easy</button>
+                    <button aria-label="Hard" class="hover" value="hard" id="difficulty-hard">Hard</button>
                 </div>
             </section>
 
             <!-- Question section -->
 
-            <section class="question-game-area" id="question-game-area">
+            <section class="question-game-area hide" id="question-game-area">
                 <div class="game-header">
                     <div class="current-question">Question
                     <span class="show-current-question">1</span>/10</div>
@@ -104,7 +100,7 @@
                     <button aria-label="Answer Button 4" id="answer4-btn" class="answer-btn answer-buttons-hover" value="d">Answer 4</button>
                 </div>
                 <div class="next-question">
-                    <button aria-label="Next Question" id="next-question" class="#"><i class="fa-solid fa-circle-chevron-right" style="color: #000000;"></i></button>
+                    <button aria-label="Next Question" id="next-question" class="#"><i class="fa-solid fa-circle-chevron-right fa-2xl" style="color: #0a2239";></i></button>
                 </div>
                                     
             </section>
@@ -113,21 +109,23 @@
     </div>
 
     <!-- Footer -->
-    <footer class="credits">&copy; PAULA DE AMICIS 2023 -- MILESTONE PROJECT 2 | CODE INSTITUTE</footer>
+    <footer class="credits">&copy; PAULA DE AMICIS 2023  |  MILESTONE PROJECT 2  |  CODE INSTITUTE</footer>
 
     <!-- Modal -->
     <div class="modal-container" id="modal_container">
 
         <div class="modal">
             <div class="modal-header">
-                <div class="cross" id="close">&times;</div>
+                <div class="cross" id="close">
+                    <i class="fa-solid fa-xmark fa-xl" style="color: #0a2239;"></i>
+                </div>
             </div>
 
             <div class="modal-body">
                 <h3>How to play</h3>
 
-                <p>Start by selecting your level of difficulty. If you're feeling shaky, go <i>EASY</i> and answer 15 multiple choice questions to find out what you know (or don't!).</p>
-                <p>Feeling confident? Try <i>HARD</i> and answer 15 open-ended questions to see just how much you do know.</p>
+                <p style="text-align: center">Start by selecting your level of difficulty. If you're feeling shaky, choose <strong>EASY</strong> and answer 10 multiple choice questions to find out what you know (or don't!).</p>
+                <p style="text-align: center">Feeling confident? Select <strong>HARD</strong> and answer 10 open-ended questions to see just how much you do know.</p>
 
                 <h1>Go Quizly!</h1>
             </div>
@@ -139,6 +137,8 @@
     <!-- JavaScript - jQuery & my JS -->
     <script type="text/javascript" src="js/modal.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/questions.js"></script>
+
 </body>
 
 </html>
