@@ -1,7 +1,7 @@
 # QUIZLY
 ### Around the World Trivia
 ***
-###### Developed by Paula De Amicis
+*Developed by Paula De Amicis*
 
 Code Institute's Milestone Project 2 is the culmination of the successful completion of all HTML5, CSS3 & JavaScript modules nested within the Front-end Development journey. 
 Designed to demonstrate competency in the three fundamental coding and programming languages and creativity in the choice of quiz. 
@@ -18,11 +18,11 @@ Designed to demonstrate competency in the three fundamental coding and programmi
 ### PROJECT OBJECTIVE
 To create a fun and interactive online quiz that incorporates appropriate use of JavaScript for its functionality. 
 
-##### USER OBJECTIVES
+#### USER OBJECTIVES
 - Test their knowledge of various topics related to travelling the world. 
 - Have fun while challenging themselves through two levels of difficulty. 
 
-##### SITE OWNER OBJECTIVES
+#### SITE OWNER OBJECTIVES
 - Demonstrate competency in the three main coding languages as part of my front-end developer journey
 - Create an online quiz that is entertaining and fun
 - Design a visually appealing, fully responsive and accessible website
@@ -30,10 +30,10 @@ To create a fun and interactive online quiz that incorporates appropriate use of
 
 ***
 ### USER EXPERIENCE
-##### TARGET AUDIENCE
+#### TARGET AUDIENCE
 Web users with an interest in world trivia, general knowledge quizzes or keen to play a fun, online game with simple rules and graphics. 
 
-##### USER REQUIREMENTS
+#### USER REQUIREMENTS
 - Easy to understand quiz rules
 - Simple navigation
 - Logical presentation and flow of content 
@@ -46,7 +46,7 @@ Web users with an interest in world trivia, general knowledge quizzes or keen to
 
 ### DESIGN
 
-##### COLOUR PALETTE 
+#### COLOUR PALETTE 
 Consistent across all devices, the colour palette was inspired by our big, blue sky and passenger air travel, so shades of blue, grey and white were used. 
 
 ![QUIZLY Colour pallette](https://...)
@@ -56,22 +56,22 @@ Responses to answers were inspired by the universal traffic light system, with c
 
 Background image credits: <xyz>
 
-##### TYPOGRAPHY
+#### TYPOGRAPHY
 Google Fonts are incorporated into the website. **Ysabeau Office** for the heading and sub-headings and **Poppins** for all other scales with a standard sans serif fallback. These styles were selected to reflect the _fun_ aspect of the game while also being legible and clear. 
 
-##### STRUCTURE
+#### STRUCTURE
 Designed to be quick to learn and easy to navigate, Quizly is a single-page website. When a player visits the website, they are greeted with a <homepage> which introduces Quizly. The user clicks a button to enter the quiz, they are then given the option to select their level of difficulty. At this point, the quiz has further navigational features; return to home or help for more information. Once the player has answered all the questions in their chosen level of difficulty, they will be presented with the number of correct responses and the corresponding award (Gold, Silver, Bronze or Try again) and the option to play again, which once clicked, will return them to the home page. 
 
 
 ***
 ## TECHNOLOGIES EMPLOYED
 
-##### LANGUAGES
+#### LANGUAGES
 - HTML5
 - CSS3
 - JavaScript
 
-##### FRAMEWORKS, LIBRARIES & TOOLS
+#### FRAMEWORKS, LIBRARIES & TOOLS
 - <composite image> to create the multi-device mock-up 
 - [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/ "A complete guide to Flexbox") - CSS flexbox layout system to provide structure and responsiveness to all elements
 - [Figma](https://www.figma.com "Figma home") - used to map out the prototype
@@ -92,18 +92,18 @@ All code validated via the [W3C HTML Validation Service](https://validator.w3.or
 
 Note: Due to multiple JavaScript files, each designed to provide functionality for specific features, .... 
 
-##### HTML VALIDATION 
+#### HTML VALIDATION 
 <insert image here>
 
 
-##### CSS VALIDATION
+#### CSS VALIDATION
 <insert image here>
 
-##### JavaScript VALIDATION 
+#### JavaScript VALIDATION 
 <insert image here>
 
 
-##### LIGHTHOUSE TESTING 
+#### LIGHTHOUSE TESTING 
 The website was tested for: 
 - Performance - how the page performs while loading
 - Accessibility - meets accessibility standards so that it works equally for everyone and provides tips on improvement where relevant
@@ -112,14 +112,14 @@ The website was tested for:
 
 <insert images>
 
-##### ACCESSIBILITY
+#### ACCESSIBILITY
 A11y
 <insert image/s> 
 
 Mobile simulator
 <insert image/s>
 
-##### MANUAL TESTING
+#### MANUAL TESTING
 Throughout development, I carried out a range of manual testing to ensure functionality was as intended. 
 
 These included: 
@@ -152,13 +152,13 @@ These included:
     *   Questions answered correctly are counted in the back end and presented as a total to the user with the                 appropriate tribute and award icon
     *   Verify the 'play again' button is enabled and will work as intended - to reload the website and direct the             user to the home page. 
 
-##### BROWSER COMPATIBILITY
+#### BROWSER COMPATIBILITY
 This website has been manually tested on the browsers listed below with additional testing via Lighthouse. 
 - Google Chrome
 - Safari
 - Firefox
 
-##### BUGS
+#### BUGS
 ...
 
 ***
