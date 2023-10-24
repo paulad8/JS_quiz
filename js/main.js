@@ -41,7 +41,7 @@ difficultyEasyBtn.addEventListener("click", runQuiz);
 difficultyHardBtn.addEventListener("click", runQuiz);
 document.getElementById("play").addEventListener("click", toDifficultyGameArea);
 goHome.addEventListener("click", reload);
-nextQuestionBtn.addEventListener("click", nextQuestion);
+//nextQuestionBtn.addEventListener("click", nextQuestion);
 playAgain.addEventListener("click", reload);
 
 //
@@ -83,11 +83,11 @@ function runQuiz(event) {
     }
 }
 
-//function nextQuestion  {
+//function nextQuestion()  {
 
 //}
 
-/** Checks is the player has answered 10 questions, and if not will loop through the questions and display them to the player. Also listens for the player's answer and then calls checkAnswer() to validate. Once all 10 questions have been answered, the gameState updates to resultsGameArea with the calculated score and relevant congratulatory message. */
+/** Checks if the player has answered 10 questions, and if not will loop through the questions and display them to the player. Also listens for the player's answer and then calls checkAnswer() to validate. Once all 10 questions have been answered, the gameState updates to resultsGameArea with the calculated score and relevant congratulatory message. */
 
 function buildQuestions() {
     if (currentQuestion >= quizLength) {
