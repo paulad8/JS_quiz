@@ -54,14 +54,22 @@ Consistent across all devices, the colour palette was inspired by our big, blue 
 
 Responses to answers were inspired by the universal traffic light system, with colours green for correct and red for incorrect. 
 
-Background image credits: <xyz>
+##### BACKGROUND IMAGE 
+
+![Hand drawn world tourism day](/assets/7618808.jpg)
+Credit: [Freepik](https://www.freepik.com/free-vector/hand-drawn-world-tourism-day-background_29889527.htm#query=doodling%20travel&position=21&from_view=search&track=ais)
+
 
 #### TYPOGRAPHY
 Google Fonts are incorporated into the website. **Ysabeau Office** for the heading and sub-headings and **Poppins** for all other scales with a standard sans serif fallback. These styles were selected to reflect the _fun_ aspect of the game while also being legible and clear. 
 
 #### STRUCTURE
-Designed to be quick to learn and easy to navigate, Quizly is a single-page website. When a player visits the website, they are greeted with a <homepage> which introduces Quizly. The user clicks a button to enter the quiz, they are then given the option to select their level of difficulty. At this point, the quiz has further navigational features; return to home or help for more information. Once the player has answered all the questions in their chosen level of difficulty, they will be presented with the number of correct responses and the corresponding award (Gold, Silver, Bronze or Try again) and the option to play again, which once clicked, will return them to the home page. 
+Designed to be quick to learn and easy to navigate, Quizly is a single-page website. When a player visits the website, they are greeted with a Welcome message on the landing page. The user clicks a button to enter the quiz, they are then given the option to select their level of difficulty. At this point, the quiz has further navigational features; return to home or help for more information. Once the player has answered all the questions in their chosen level of difficulty, they will be presented with the number of correct responses and the corresponding award (Gold, Silver, Bronze or Try again) and the option to play again, which once clicked, will return them to the home page. 
 
+#### PROTOTYPES
+Wireframes, concept prototypes and user journeys were mapped out using [Figma](https://www.figma.com "Figma home"). 
+
+<insert images>
 
 ***
 ## TECHNOLOGIES EMPLOYED
@@ -178,6 +186,7 @@ This website was deployed to GitHub Pages.
 - Code snippets and structure inspiration derived from past students projects and the online code community via [StackOverflow], A Designer who Codes and Bytexxxx tutorials hosted on [YouTube]. Support from Code Institute mentor Scott N. 
 - Markup documentation initially compiled on [Dillinger](https://dillinger.io/)
 - Tips on correct syntax provided by [Bharat Kumar](https://er-bharat1992.medium.com/writing-readme-md-markdown-file-file-bd711d1afbfa)
+- Background image from [Freepik]([https://www.freepik.com](https://www.freepik.com/)
 
 
 
