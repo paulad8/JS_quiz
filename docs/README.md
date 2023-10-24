@@ -49,7 +49,7 @@ Web users with an interest in world trivia, general knowledge quizzes or keen to
 #### COLOUR PALETTE 
 Consistent across all devices, the colour palette was inspired by our big, blue sky and passenger air travel, so shades of blue, grey and white were used. 
 
-![QUIZLY Colour pallette](https://...)
+![QUIZLY Colour pallette](/docs/QUIZLY-colour-palette.png)
 
 
 Responses to answers were inspired by the universal traffic light system, with colours green for correct and red for incorrect. 
