@@ -1,4 +1,5 @@
-﻿// Variables
+﻿/*jshint esversion: 6 */
+// Variables
 
 const startGameArea = document.getElementById("start-game-area");
 const difficultyGameArea = document.getElementById("difficulty-game-area");
@@ -26,7 +27,7 @@ let currentQuestion = 0;
 let shuffledQuestions = 0;
 let quizLength = 10;
 let currentQuestionSet = {};
-let score = 0
+let score = 0;
 let answerClicked = false;
 let determineColour = "unanswered";
 let goHome = document.getElementById("home-icon");
@@ -94,32 +95,32 @@ function buildQuestions() {
         questionGameArea.classList.add("hide");
         resultsGameArea.classList.remove("hide");
         gameState = "results-game-area";
-        if answeredCorrect === 10;
+        if (answeredCorrect === 10);
         document.getElementById("results-header").innerText = `${Excellent}`;
         silver.classList.add("hide");
         bronze.classList.add("hide");
         ded.classList.add("hide");
         gold.classList.remove("hide");
         document.getElementById("results-body-text").innerText = `You answered ${answeredCorrect} ${playerDifficulty} questions correct.`;
-        else if answeredCorrect = 7, 8, 9;
+        else if (answeredCorrect = 7, 8, 9);
         document.getElementById("results-header").innerText = `${Great}`;
         silver.classList.remove("hide");
         bronze.classList.add("hide");
         ded.classList.add("hide");
         gold.classList.add("hide");
         document.getElementById("results-body-text").innerText = `You answered ${answeredCorrect} ${playerDifficulty} questions correct.`;
-        else if answeredCorrect = 4, 5, 6;
+        else if (answeredCorrect = 4, 5, 6);
         document.getElementById("results-header").innerText = `${Nice attempt}`;
         silver.classList.add("hide");
         bronze.classList.remove("hide");
         ded.classList.add("hide");
         gold.classList.add("hide");
-        document.getElementById("results-body-text").innerText = `You answered ${ answeredCorrect } ${ playerDifficulty } questions correct.`;
-        else answeredCorrect = 0, 1, 2, 3;
+        document.getElementById("results-body-text").innerText = `You answered ${ answeredCorrect } ${playerDifficulty} questions correct.`;
+        else (answeredCorrect = 0, 1, 2, 3);
         document.getElementById("results-header").innerText = `${Poor effort}`;
         silver.classList.add("hide");
         bronze.classList.add("hide");
-        ded.classList.remove("hide");
+        ded.classList.remove("show");
         gold.classList.add("hide");
         document.getElementById("results-body-text").innerText = `You answered ${ answeredCorrect } ${ playerDifficulty } questions correct.`;
 
