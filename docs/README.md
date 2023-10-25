@@ -152,7 +152,7 @@ These included:
     * Selected answer will trigger the appropriate text banner (red = incorrect / green = correct)
     * 'Next Question' icon is disabled until the user has submitted an answer
     * 'Next Question' icon enabled after the answer submitted
-    * Once the 'next question' icon has been clicked, the next question will be correctly loaded and will continue           until all questions (easy = 15 questions / hard = 10 questions) in that section have been answered. 
+    * Once the 'next question' icon has been clicked, the next question will be correctly loaded and continue           until all questions (easy = 15 questions / hard = 10 questions) in that section have been answered. 
     * When all questions for the section have been answered, the results section will be triggered. 
 
 *   Results section 
@@ -161,7 +161,7 @@ These included:
     *   Verify the 'play again' button is enabled and will work as intended - to reload the website and direct the             user to the home page. 
 
 #### BROWSER COMPATIBILITY
-This website has been manually tested on the browsers listed below with additional testing via Lighthouse. 
+This website has been manually tested on the browsers listed below, with additional testing via Lighthouse. 
 - Google Chrome
 - Safari
 - Firefox
@@ -178,15 +178,15 @@ This website was deployed to GitHub Pages.
 ### CREDITS
 - Fonts from [Google Fonts](https://fonts.google.com/)
 - Colour palette from [Coolors](https://coolors.co/?home)
-- HTML icons from [Font Awesome](Font Awesome)
-- [Favicon](https://favicon.io/favicon-converter/) converted icon created by Vectors Market on [Flaticon] (https://www.flaticon.com/free-icons/travel) 
-- Questions and answers from ....
-- Background image from ....
+- HTML icons from [Font Awesome](https://fontawesome.com/)
+- [Favicon](https://favicon.io/favicon-converter/) converted icon created by Vectors Market on [Flaticon](https://www.flaticon.com/free-icons/travel) 
+- Questions and answers from [Travel and Destinations](https://www.travelanddestinations.com/travel-quiz-around-the-world-free-trivia-questions/) , [Mentimeter](https://www.mentimeter.com/blog/stand-out-get-ahead/trivia-questions) and [Watercooler Trivia](https://www.watercoolertrivia.com/trivia-questions/geography-trivia-questions)
 - Icons for awards from [Favicon](https://favicon.io/)
-- Code snippets and structure inspiration derived from past students projects and the online code community via [StackOverflow], A Designer who Codes and Bytexxxx tutorials hosted on [YouTube]. Support from Code Institute mentor Scott N. 
+- Code snippets and structure inspiration derived from past students' projects and the online code community via [StackOverflow](https://stackoverflow.com/), [A Designer who Codes](https://www.youtube.com/@ADesignerWhoCodes/playlists) and [ByteGrad](https://www.youtube.com/@ByteGrad).
+- Support from Code Institute mentor Scott Nnaghor. 
 - Markup documentation initially compiled on [Dillinger](https://dillinger.io/)
-- Tips on correct syntax provided by [Bharat Kumar](https://er-bharat1992.medium.com/writing-readme-md-markdown-file-file-bd711d1afbfa)
-- Background image from [Freepik]([https://www.freepik.com](https://www.freepik.com/)
+- Tips on correct Markup syntax for README.md provided by [Bharat Kumar](https://er-bharat1992.medium.com/writing-readme-md-markdown-file-file-bd711d1afbfa)
+- Background image from [Freepik](https://www.freepik.com/)
 
 
 
