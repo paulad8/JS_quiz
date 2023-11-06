@@ -68,10 +68,10 @@ Designed to be quick to learn and easy to navigate, Quizly is a single-page webs
 
 #### PROTOTYPES
 Wireframes, concept prototypes and user journeys were mapped out using [Figma](https://www.figma.com "Figma home"). 
+   
+![Prototype: User Journey](docs/Prototype_User-journey.png)
 
-<insert images>
-
-***
+   ***
 ## TECHNOLOGIES EMPLOYED
 
 #### LANGUAGES
