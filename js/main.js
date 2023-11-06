@@ -95,35 +95,40 @@ function buildQuestions() {
         questionGameArea.classList.add("hide");
         resultsGameArea.classList.remove("hide");
         gameState = "results-game-area";
-        if (answeredCorrect === 10);
-        document.getElementById("results-header").innerText = `${Excellent}`;
-        silver.classList.add("hide");
-        bronze.classList.add("hide");
-        ded.classList.add("hide");
-        gold.classList.remove("hide");
-        document.getElementById("results-body-text").innerText = `You answered ${answeredCorrect} ${playerDifficulty} questions correct.`;
-        else if (answeredCorrect = 7, 8, 9);
-        document.getElementById("results-header").innerText = `${Great}`;
-        silver.classList.remove("hide");
-        bronze.classList.add("hide");
-        ded.classList.add("hide");
-        gold.classList.add("hide");
-        document.getElementById("results-body-text").innerText = `You answered ${answeredCorrect} ${playerDifficulty} questions correct.`;
-        else if (answeredCorrect = 4, 5, 6);
-        document.getElementById("results-header").innerText = `${Nice attempt}`;
-        silver.classList.add("hide");
-        bronze.classList.remove("hide");
-        ded.classList.add("hide");
-        gold.classList.add("hide");
-        document.getElementById("results-body-text").innerText = `You answered ${ answeredCorrect } ${playerDifficulty} questions correct.`;
-        else (answeredCorrect = 0, 1, 2, 3);
-        document.getElementById("results-header").innerText = `${Poor effort}`;
-        silver.classList.add("hide");
-        bronze.classList.add("hide");
-        ded.classList.remove("show");
-        gold.classList.add("hide");
-        document.getElementById("results-body-text").innerText = `You answered ${ answeredCorrect } ${ playerDifficulty } questions correct.`;
+        if (answeredCorrect == 10) {
+            document.getElementById("results-header").innerText = `${ Excellent }`;
+            silver.classList.add("hide");
+            bronze.classList.add("hide");
+            ded.classList.add("hide");
+            gold.classList.remove("hide");
+            document.getElementById("results-body-text").innerText = `You answered ${answeredCorrect}
+            ${ playerDifficulty } questions correct.`;
+        } else if (answeredCorrect == 7 || answeredCorrect == 8 || answeredCorrect == 9) {
+            document.getElementById("results-header").innerText = `${ Great }`;
+            silver.classList.remove("hide");
+            bronze.classList.add("hide");
+            ded.classList.add("hide");
+            gold.classList.add("hide");
+            document.getElementById("results-body-text").innerText = `You answered ${ answeredCorrect }
+            ${ playerDifficulty } questions correct.`;
+        } else if (answeredCorrect == 4 || answeredCorrect == 5 || answeredCorrect == 6) {
+            document.getElementById("results-header").innerText = `${ Nice }`;
+            silver.classList.add("hide");
+            bronze.classList.remove("hide");
+            ded.classList.add("hide");
+            gold.classList.add("hide");
+            document.getElementById("results-body-text").innerText = `You answered ${ answeredCorrect }
+            ${ playerDifficulty } questions correct.`;
+        }  else { 
+                document.getElementById("results-header").innerText = `${ Fail }`;
+                silver.classList.add("hide");
+                bronze.classList.add("hide");
+                ded.classList.remove("show");
+                gold.classList.add("hide");
+                document.getElementById("results-body-text").innerText = `You answered ${ answeredCorrect } ${ playerDifficulty } questions correct.`;
+        }
 
+/*
     }   else {
         gameState = "question-game-area";
         for (let i = 0; i < currentQuestionSet.length; i++ )  {
@@ -139,6 +144,8 @@ function buildQuestions() {
         }
     }
 }
+/*
+
 
 /** Validates the player's answer */
 
@@ -167,5 +174,4 @@ function checkAnswer() {
     showNextQuestion();
 }
 }
-
 
