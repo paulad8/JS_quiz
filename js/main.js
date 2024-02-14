@@ -1,4 +1,5 @@
 ﻿/*jshint esversion: 6 */
+
 // Variables
 
 const startGameArea = document.getElementById("start-game-area");
@@ -18,18 +19,15 @@ const gold = document.getElementById("gold");
 const silver = document.getElementById("silver");
 const bronze = document.getElementById("bronze");
 const ded = document.getElementById("ded");
-
-
-
 let gameState = "start-game-area";
 let displayedQuestionNumber = 1;
 let currentQuestion = 0;
 let shuffledQuestions = 0;
 let quizLength = 10;
 let currentQuestionSet = {};
+let setColour = 0;
 let score = 0;
 let answerClicked = false;
-let determineColour = "unanswered";
 let goHome = document.getElementById("home-icon");
 let playAgain = document.getElementById("play-again-btn");
 let playerDifficulty;
@@ -38,16 +36,16 @@ let answeredWrong = 0;
 
 
 // Event Listeners
+document.getElementById("play").addEventListener("click", setDifficulty);
 difficultyEasyBtn.addEventListener("click", runQuiz);
 difficultyHardBtn.addEventListener("click", runQuiz);
-document.getElementById("play").addEventListener("click", toDifficultyGameArea);
 goHome.addEventListener("click", reload);
-//nextQuestionBtn.addEventListener("click", nextQuestion);
+nextQuestionBtn.addEventListener("click", nextQuestion);
 playAgain.addEventListener("click", reload);
 
-//
 
-// Reload the site
+
+// Reloads the site
 
 function reload() {
    location.reload();
@@ -55,7 +53,7 @@ function reload() {
 
 /** When the play clicks 'Let's Go!', hides the start-game-area and shows the difficulty-game-area **/
 
-function toDifficultyGameArea() {
+function setDifficulty(event) {
     startGameArea.classList.add("hide");
     difficultyGameArea.classList.remove("hide");
     gameState = "difficulty-game-area";
@@ -84,11 +82,46 @@ function runQuiz(event) {
     }
 }
 
-//function nextQuestion()  {
+function nextQuestion() {
+    displayedQuestionNumber++;
+    currentQuestionNumber.innerText = displayedQuestionNumber;
+    currentQuestion++;
+    buildQuestions();
+    nextQuestionBtn.classList.add("greyscale");
+    nextQuestionBtn.setAttribute("disabled", "disabled");
+    nextQuestionBtn.classList.remove("hover");
+    answer1.removeAttribute("disabled", "disabled");
+    answer2.removeAttribute("disabled", "disabled");
+    answer3.removeAttribute("disabled", "disabled");
+    answer4.removeAttribute("disabled", "disabled");
+    answer1.classList.add("answer-buttons-hover");
+    answer2.classList.add("answer-buttons-hover");
+    answer3.classList.add("answer-buttons-hover");
+    answer4.classList.add("answer-buttons-hover");
+    let answerButtons = document.getElementsByClassName("answer-btn");
+    for (let i = 0; i < answerButtons.length; i++) {
+        answerButtons[i].classList.remove("correct");
+        answerButtons[i].classList.remove("wrong");
+    }
+}
 
-//}
+/** 1 second delay to enabling nextQuestionBtn **/
 
-/** Checks if the player has answered 10 questions, and if not will loop through the questions and display them to the player. Also listens for the player's answer and then calls checkAnswer() to validate. Once all 10 questions have been answered, the gameState updates to resultsGameArea with the calculated score and relevant congratulatory message. */
+function showNextQuestionBtn() {
+    setTimeout(function () {
+        nextQuestionBtn.classList.remove("greyscale");
+        nextQuestionBtn.removeAttribute("disabled", "disabled");
+        nextQuestionBtn.classList.add("hover");
+    }, 1000);
+}
+
+
+/** Checks if the player has answered 10 questions,
+* if not will loop through the questions and display them to the player.
+* Listens for the player's answer and then calls checkAnswer() to validate.
+* Once all 10 questions have been answered, the gameState updates to resultsGameArea
+* with the calculated score and relevant congratulatory message and trophy.
+*/
 
 function buildQuestions() {
     if (currentQuestion >= quizLength) {
@@ -96,82 +129,90 @@ function buildQuestions() {
         resultsGameArea.classList.remove("hide");
         gameState = "results-game-area";
         if (answeredCorrect == 10) {
-            document.getElementById("results-header").innerText = `${ Excellent }`;
+            document.getElementById("results-header").innerText = `${Excellent}`;
             silver.classList.add("hide");
             bronze.classList.add("hide");
             ded.classList.add("hide");
             gold.classList.remove("hide");
             document.getElementById("results-body-text").innerText = `You answered ${answeredCorrect}
-            ${ playerDifficulty } questions correct.`;
+            ${playerDifficulty} questions correct.`;
         } else if (answeredCorrect == 7 || answeredCorrect == 8 || answeredCorrect == 9) {
-            document.getElementById("results-header").innerText = `${ Great }`;
+            document.getElementById("results-header").innerText = `${Great}`;
             silver.classList.remove("hide");
             bronze.classList.add("hide");
             ded.classList.add("hide");
             gold.classList.add("hide");
-            document.getElementById("results-body-text").innerText = `You answered ${ answeredCorrect }
-            ${ playerDifficulty } questions correct.`;
+            document.getElementById("results-body-text").innerText = `You answered ${answeredCorrect}
+            ${playerDifficulty} questions correct.`;
         } else if (answeredCorrect == 4 || answeredCorrect == 5 || answeredCorrect == 6) {
-            document.getElementById("results-header").innerText = `${ Nice }`;
+            document.getElementById("results-header").innerText = `${Nice}`;
             silver.classList.add("hide");
             bronze.classList.remove("hide");
             ded.classList.add("hide");
             gold.classList.add("hide");
-            document.getElementById("results-body-text").innerText = `You answered ${ answeredCorrect }
-            ${ playerDifficulty } questions correct.`;
-        }  else { 
-                document.getElementById("results-header").innerText = `${ Fail }`;
-                silver.classList.add("hide");
-                bronze.classList.add("hide");
-                ded.classList.remove("show");
-                gold.classList.add("hide");
-                document.getElementById("results-body-text").innerText = `You answered ${ answeredCorrect } ${ playerDifficulty } questions correct.`;
-        }
-
-/*
-    }   else {
-        gameState = "question-game-area";
-        for (let i = 0; i < currentQuestionSet.length; i++ )  {
-        questionText.innerHTML = currentQuestionSet[currentQuestion].question;
-        answer1.innerHTML = currentQuestionSet[currentQuestion].a;
-        answer2.innerHTML = currentQuestionSet[currentQuestion].b;
-        answer3.innerHTML = currentQuestionSet[currentQuestion].c;
-        answer4.innerHTML = currentQuestionSet[currentQuestion].d;
-        answer1.onclick = checkAnswer;
-        answer2.onclick = checkAnswer;
-        answer3.onclick = checkAnswer;
-        answer4.onclick = checkAnswer;
+            document.getElementById("results-body-text").innerText = `You answered ${answeredCorrect}
+            ${playerDifficulty} questions correct.`;
+        } else if (answeredCorrect <= 3) {
+            document.getElementById("results-header").innerText = `${Fail}`;
+            silver.classList.add("hide");
+            bronze.classList.add("hide");
+            ded.classList.remove("show");
+            gold.classList.add("hide");
+            document.getElementById("results-body-text").innerText = `You answered ${answeredCorrect}
+            ${playerDifficulty} questions correct.`;
+        } else {
+            gameState = "question-game-area";
+            for (let i = 0; i < currentQuestionSet.length; i++) {
+                questionText.innerHTML = currentQuestionSet[currentQuestion].question;
+                answer1.innerHTML = currentQuestionSet[currentQuestion].a;
+                answer2.innerHTML = currentQuestionSet[currentQuestion].b;
+                answer3.innerHTML = currentQuestionSet[currentQuestion].c;
+                answer4.innerHTML = currentQuestionSet[currentQuestion].d;
+                answer1.onclick = checkAnswer;
+                answer2.onclick = checkAnswer;
+                answer3.onclick = checkAnswer;
+                answer4.onclick = checkAnswer;
+            }
         }
     }
 }
-/*
-
 
 /** Validates the player's answer */
 
-function checkAnswer() {
-    answer1.setAtribute("disabled", "disabled");
-    answer2.setAtribute("disabled", "disabled");
-    answer3.setAtribute("disabled", "disabled");
-    answer4.setAtribute("disabled", "disabled");
-    answer1.classList.remove("answer-buttons-hover");
-    answer2.classList.remove("answer-buttons-hover");
-    answer3.classList.remove("answer-buttons-hover");
-    answer4.classList.remove("answer-buttons-hover");
+        function checkAnswer() {
+            answer1.setAtribute("disabled", "disabled");
+            answer2.setAtribute("disabled", "disabled");
+            answer3.setAtribute("disabled", "disabled");
+            answer4.setAtribute("disabled", "disabled");
+            answer1.classList.remove("answer-buttons-hover");
+            answer2.classList.remove("answer-buttons-hover");
+            answer3.classList.remove("answer-buttons-hover");
+            answer4.classList.remove("answer-buttons-hover");
 
-    let playerAnswer = this.value;
-    let correctAnswer = currentQuestionSet[currentQuestion].answer;
-    if (playerAnswer === correctAnswer)  {
-    answerClicked = true;
-    determineColour = "correct";
-    answeredCorrect++;
-    incrementScore();
-    showNextQuestion();
-}   else  {
-    answerClicked = true;
-    determineColour = "incorrect";
-    answeredWrong++;
-    showNextQuestion();
-}
-}
+            let playerAnswer = this.value;
+            let correctAnswer = currentQuestionSet[currentQuestion].answer;
+            if (playerAnswer === correctAnswer) {
+                answerClicked = true;
+                setColour = "correct";
+                answeredCorrect++;
+                showNextQuestionBtn();
+            } else {
+                answerClicked = true;
+                setColour = "wrong";
+                answeredWrong++;
+                showNextQuestionBtn();
+            }
 
+            let answerButtons = document.getElementsByClassName("answer-btn");
+            for (let i = 0; i < answerButtons.length; i++) {
+                if (answerButtons[i].value === correctAnswer) {
+                    answerButtons[i].classList.add("correct");
+                } else if (playerAnswer !== correctAnswer) {
+                    this.classList.add("wrong");
+                }
+            }
+        }
+
+/** Applies a colour to the element based on correct or wrong answer submitted */
+
+// function setColourBlock() { }
