@@ -160,6 +160,10 @@ footer {
     display: none;
 }
 
+.greyscale  {
+    filter: grayscale(100%);
+}
+
 .hover:hover {
     cursor: pointer;
     background-color: #176087;
@@ -174,6 +178,14 @@ footer {
     color: white;
     border: solid 2pt white;
     box-shadow: none;
+}
+
+.correct  {
+    background-color: rgb(12, 114, 12);
+}
+
+.wrong  {
+    background-color: rgb(143,22,22);
 }
 
 .play-again-btn-hover:hover {
@@ -317,23 +329,4 @@ button {
     }
 
 
-.slide  {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 0.5s;
-}
 
-.active-slide {
-    opacity: 1;
-    z-index: 2;
-}
- 
-
-
-<a href="https://www.freepik.com/free-vector/business-startup-with-businessman-flying-rocket_22535555.htm#page=2&query=doodling&position=2&from_view=search&track=sph#position=2&page=2&query=doodling" > Image by upklyak</a > on Freepik
-
-Image by <a href="https://www.freepik.com/free-vector/hand-drawn-world-tourism-day-background_29889527.htm#query=doodling%20travel&position=21&from_view=search&track=ais" > Freepik</a >
