@@ -47,20 +47,20 @@
 
                     <h3>Welcome! </h3>
 
-                    <p>This quiz is designed to test your knowledge of various topics related to world travel.</p>
-
-                    <p>So, get ready to flex your brain muscle and see how much you know about the world around you. Good luck! </p>
+                    <p>Let's start by selecting your level of difficulty. There's a level for you, whether you're feeling a little shaky or as confident as ever. </p>
+                    <p>Choose EASY for 10 multiple-choice questions and discover what you know (or don't!). And if you're feeling up for a challenge, select HARD and answer 10 open-ended questions. 
+                     Show the world how much you know and what you're capable of.</p>
 
 
                     <div class="button">
-                        <button type="button" class="hover" id="play">Let's Go!</button>
+                        <button aria-label="play" type="button" class="hover" id="play">Let's Go!</button>
                     </div>
 
                 </div>
             </section>
 
             <!-- Difficulty section -->
-            <section class="difficulty-game-area " id="difficulty-game-area">
+            <section class="difficulty-game-area hide" id="difficulty-game-area">
                 <div class="game-header">
                     <div class="home-icon" id="home-icon">
                         <i class="fa-solid fa-house fa-xl" style="color: #0a2239;"></i>
@@ -78,8 +78,8 @@
                     <p>Choose a level to test your knowledge.</p>
                 </div>
                 <div class="difficulty-btn">
-                    <button aria-label="Easy" class="hover" value="easy" id="difficulty-easy">Easy</button>
-                    <button aria-label="Hard" class="hover" value="hard" id="difficulty-hard">Hard</button>
+                    <button aria-label="Difficulty Easy" class="hover" value="easy" id="difficulty-easy">Easy</button>
+                    <button aria-label="Difficulty Hard" class="hover" value="hard" id="difficulty-hard">Hard</button>
                 </div>
             </section>
 
@@ -90,14 +90,15 @@
                     <div class="current-question">Question
                     <span class="show-current-question">1</span>/10</div>
                 </div>
+                <hr />
                 <div class="question-body-text" >
-                    <h2 id="question-text">${...}</h2>
+                    <h3 id="question-text">There has been an unexpected error. Please reload and try again.</h3>
                 </div>
                 <div class="answer-buttons">
-                    <button aria-label="Answer Button 1" id="answer1-btn" class="answer-btn answer-buttons-hover" value="a">Answer 1</button>
-                    <button aria-label="Answer Button 2" id="answer2-btn" class="answer-btn answer-buttons-hover" value="b">Answer 2</button>
-                    <button aria-label="Answer Button 3" id="answer3-btn" class="answer-btn answer-buttons-hover" value="c">Answer 3</button>
-                    <button aria-label="Answer Button 4" id="answer4-btn" class="answer-btn answer-buttons-hover" value="d">Answer 4</button>
+                    <span><button aria-label="Answer Button 1" id="answer1-btn" class="answer-btn answer-buttons-hover" value="a">Answer 1</button></span>
+                    <span><button aria-label="Answer Button 2" id="answer2-btn" class="answer-btn answer-buttons-hover" value="b">Answer 2</button></span>
+                    <span><button aria-label="Answer Button 3" id="answer3-btn" class="answer-btn answer-buttons-hover" value="c">Answer 3</button></span>
+                    <span><button aria-label="Answer Button 4" id="answer4-btn" class="answer-btn answer-buttons-hover" value="d">Answer 4</button></span>
                 </div>
                 <div class="next-question">
                     <button aria-label="Next Question" id="next-question" class="hover"><i class="fa-solid fa-circle-chevron-right fa-2xl" style="color: #0a2239"></i></button>
@@ -128,12 +129,14 @@
                     <button aria-label="Play Again" id="play-again-btn" class="play-again-btn-hover" value="Play again">Play again</button>
                 </div>
             </section>
+
+
         </div>
 
     </div>
 
     <!-- Footer -->
-    <footer class="credits">&copy; PAULA DE AMICIS 2023  |  MILESTONE PROJECT 2  |  CODE INSTITUTE</footer>
+    <footer class="credits">&copy; PAULA DE AMICIS 2024  |  MILESTONE PROJECT 2  |  CODE INSTITUTE</footer>
 
     <!-- Modal -->
     <div class="modal-container" id="modal_container">
@@ -159,9 +162,9 @@
     </div>
 
     <!-- JavaScript - jQuery & my JS -->
-    <script type="text/javascript" src="js/modal.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
-    <script type="text/javascript" src="js/questions.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/questions.js"></script>
 
 </body>
 
