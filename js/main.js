@@ -26,7 +26,6 @@ let shuffledQuestions = 0;
 let quizLength = 10;
 let currentQuestionSet = {};
 let setColour = 0;
-let score = 0;
 let answerClicked = false;
 let goHome = document.getElementById("home-icon");
 let playAgain = document.getElementById("play-again-btn");
@@ -83,8 +82,8 @@ function runQuiz(event) {
 }
 
 function nextQuestion() {
-    displayedQuestionNumber++;
     currentQuestionNumber.innerText = displayedQuestionNumber;
+    displayedQuestionNumber++;
     currentQuestion++;
     buildQuestions();
     nextQuestionBtn.classList.add("greyscale");
