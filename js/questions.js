@@ -175,92 +175,186 @@ const hardQuestions = [
 
     {
         question: "What 'Z' river, the fourth-longest in Africa, originates in Zambia and flows east through Zimbabwe and Mozambique before emptying into the Indian Ocean?",
+        answers: {
+            a: "Zambezi",
+            b: "Zigzag",
+            c: "Zezere",
+            d: "Zeland"
+        },
 
-        correctAnswer: "Zambezi"
+        correctAnswer: "a"
     },
 
     {
         question: "Busan, formerly called Pusan, is the second most populous city in which Asian country?",
+        answers: {
+            a: "Shanghai",
+            b: "Shenzhen",
+            c: "Seoul",
+            d: "South Korea"
 
-        correctAnswer: "South Korea"
+        },
+
+        correctAnswer: "d"
     },
 
     {
-        question: "Khartoum, a metropolitan city on the confluence of the White Nile, is the capital city of what African nation on continent’s east coast?",
+        question: "Khartoum, a metropolitan city on the confluence of the White Nile, is the capital city of what African nation?",
+        answers: {
+            a: "Addis Ababa",
+            b: "Rabat",
+            c: "Sudan",
+            d: "Dakar"
 
-        correctAnswer: "Sudan"
+        },
+
+        correctAnswer: "c"
     },
 
     {
         question: "Which of the current seven continents on Earth is believed to be the oldest in terms of how long humans have lived there (somewhere in the ballpark of 5 million years)?",
+        answers: {
+            a: "Americas",
+            b: "Africa",
+            c: "Australasia",
+            d: "Western Asia"
 
-        correctAnswer: "Africa"
+        },
+
+        correctAnswer: "b"
     },
 
     {
         question: "In what nation can you find the Coober Pedy, an opal mining town where summers are so hot, most of the town is built underground?",
+        answers: {
+            a: "U.S.A",
+            b: "Kiribati",
+            c: "Australia",
+            d: "Palau"
 
-        correctAnswer: "Australia"
+        },
+
+        correctAnswer: "c"
     },
 
     {
         question: "Designed by starchitect Renzo Piano, The Shard is a 72-story skyscraper known for its needle-like shape, in what world capital city?",
+        answers: {
+            a: "London",
+            b: "Chicago",
+            c: "San Francisco",
+            d: "Melbourne"
+        },
 
-        correctAnswer: "London"
+        correctAnswer: "a"
     },
 
     {
         question: "Rome's Cloaca Maxima was an early example of what infrastructure project that makes cities a whole lot more liveable?",
-
-        correctAnswer: "Sewer system"
+        answers: {
+            a: "Roads",
+            b: "Sewer system",
+            c: "Aqueducts",
+            d: "Public baths"
+        },
+        
+        correctAnswer: "b"
     },
 
     {
         question: "Although the vast majority of the Amazon River is located in Brazil, the headwaters of the waterway are found in what other South American country?",
+        answers: {
+            a: "Bolivia",
+            b: "Paraguay",
+            c: "Peru",
+            d: "Colombia"
 
-        correctAnswer: "Peru"
+        },
+
+        correctAnswer: "c"
 
     },
 
     {
         question: "New Zealand is, unsurprisingly, named after another physical location. Zeeland is the least populous province in what European country?",
+        answers: {
+            a: "Netherlands",
+            b: "Denmark",
+            c: "Sweden",
+            d: "Belgium"
+        }
 
-        correctAnswer: "Netherlands"
+        correctAnswer: "a"
     },
 
     {
-        question: "By some accounts, Mt. Everest isn't actually the tallest mountain in the world. What dormant volcano in the Pacific is actually 10,060 mt. (33,000 ft.) tall - 1,219 mt. (4,000 ft.) above Everest, although about half of that is underwater?",
+        question: "By some accounts, Mt. Everest isn't actually the tallest mountain in the world. What dormant volcano is actually 10,060 mt. (33,000 ft.) tall - 1,219 mt. (4,000 ft.) above Everest, although about half of that is underwater?",
+        answers: {
+            a: "Mauna Kea",
+            b: "Mount Overlord",
+            c: "Mauna Loa",
+            d: "Mount Sidley"
+        },
 
-        correctAnswer: "Mauna Kea"
+        correctAnswer: "a"
     },
 
     {
         question: "The official languages of the United Nations are comprised of Arabic, Chinese, English, French, Spanish and what sixth language?",
+        answers: {
+            a: "Hindi",
+            b: "Mandarin",
+            c: "Russian",
+            d: "Bengali"
+        },
 
-        correctAnswer: "Russian"
+        correctAnswer: "c"
     },
 
     {
-        question: "The third-largest city in India is also the capital of the state of Karnataka. What is this city in south India? As a hint, the city shares the same first four letters with the 8th most populous country in the world.",
-
-        correctAnswer: "Bangalore"
+        question: "The third-largest city in India is also the capital of the state of Karnataka. What is this city in south India?",
+        answers: {
+            a: "Mumbai",
+            b: "Bangalore",
+            c: "Kolkata",
+            d: "Hyderabad"
+        },
+        correctAnswer: "b"
     },
 
     {
-        question: "What river, located entirely within China, is the longest river in Asia and the longest river in the world to flow entirely within one country?",
+        question: "What river is the longest river in Asia and the longest river in the world to flow entirely within one country?",
+        answers: {
+            a: "Yangtze",
+            b: "Mekong",
+            c: "Yellow",
+            d: "Ganges"
+        },
 
-        correctAnswer: "Yangtze"
+        correctAnswer: "a"
     },
 
     {
-        question: "Machu Picchu was never plundered by the Spanish because the conquistadors never found this ancient site from the height of the Inca Empire. The lack of discovery was especially unlikely because the site is only 80 km (50 miles) from what Inca capital city?",
+        question: "What Carribean country changed its name from Saint-Domingue following its independence from Napolean Bonaparte and his French forces in 1903?",
+        answers: {
+            a: "Haiti",
+            b: "Martinique",
+            c: "St Martin",
+            d: "Guadeloupe"
+        },
 
-        correctAnswer: "Cusco"
+        correctAnswer: "a"
     },
 
     {
-        question: "Located on the Yucatan Peninsula, what Mexican state sounds like it might contain Australian mammals but is actually named for a lawyer who fought for Mexican independence?",
+        question: "At almost 26,000 square kilometers (10,000 sq. miles), what island is the largest in the Mediterranean Sea?",
+        answers: {
+            a: "Sardinia",
+            b: "Cyprus",
+            c: "Crete",
+            d: "Sicily"
+        },
 
-        correctAnswer: "Quintana Roo"
+        correctAnswer: "d"
     },
 ];
