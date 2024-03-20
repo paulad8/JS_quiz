@@ -36,8 +36,14 @@ let answeredWrong = 0;
 
 // Event Listeners
 document.getElementById("play").addEventListener("click", setDifficulty);
-difficultyEasyBtn.addEventListener("click", runQuiz);
-difficultyHardBtn.addEventListener("click", runQuiz);
+difficultyEasyBtn.addEventListener("click", function() {
+    this.innerText = "Loading.."; //Change the button text
+    setTimeout(runQuiz, 1000); //Wait for a second before running the quiz
+});
+difficultyHardBtn.addEventListener("click", function () {
+    this.innerText = "Loading.."; //Change the button text
+    setTimeout(runQuiz, 1000); //Wait for a second before running the quiz
+});
 goHome.addEventListener("click", reload);
 nextQuestionBtn.addEventListener("click", nextQuestion);
 playAgain.addEventListener("click", reload);
@@ -101,6 +107,13 @@ function nextQuestion() {
     for (let i = 0; i < answerButtons.length; i++) {
         answerButtons[i].classList.remove("correct");
         answerButtons[i].classList.remove("wrong");
+    }
+}
+
+function updateQuestionNumber(currentQuestionIndex) {
+    const questionNumberElement = document.querySelector('.show-current-question');
+    if (questionNumberElement) {
+        questionNumberElement.innerText = currentQuestionIndex + 1; // Assuming index starts from 0
     }
 }
 
