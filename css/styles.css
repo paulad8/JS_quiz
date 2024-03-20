@@ -206,6 +206,13 @@ footer {
 
 }
 
+    .next-question button:hover {
+        
+        border: solid 2pt #bde3ff;
+        color: white;
+        box-shadow: none;
+    }
+
 .modal-container {
     background-color: transparent;
     display: flex;
