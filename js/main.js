@@ -2,6 +2,7 @@
 
 // Variables
 
+const { easyQuestions, hardQuestions } = require('./questions.js');
 const startGameArea = document.getElementById("start-game-area");
 const difficultyGameArea = document.getElementById("difficulty-game-area");
 const questionGameArea = document.getElementById("question-game-area");
@@ -36,14 +37,20 @@ let answeredWrong = 0;
 
 // Event Listeners
 document.getElementById("play").addEventListener("click", setDifficulty);
-difficultyEasyBtn.addEventListener("click", function() {
+difficultyEasyBtn.addEventListener("click", function(event) {
     this.innerText = "Loading.."; //Change the button text
-    setTimeout(runQuiz, 1000); //Wait for a second before running the quiz
+    setTimeout(function () {
+        runQuiz(event); // Pass the event object to runQuiz
+    }, 1000); //Wait for a second before running the quiz
 });
-difficultyHardBtn.addEventListener("click", function () {
+
+difficultyHardBtn.addEventListener("click", function (event) {
     this.innerText = "Loading.."; //Change the button text
-    setTimeout(runQuiz, 1000); //Wait for a second before running the quiz
+    setTimeout(function () {
+        runQuiz(event); // Pass the event object to runQuiz
+    }, 1000); //Wait for a second before running the quiz
 });
+
 goHome.addEventListener("click", reload);
 nextQuestionBtn.addEventListener("click", nextQuestion);
 playAgain.addEventListener("click", reload);
@@ -228,3 +235,6 @@ function buildQuestions() {
 /** Applies a colour to the element based on correct or wrong answer submitted */
 
 // function setColourBlock() { }
+
+console.log(easyQuestions);
+console.log(hardQuestions);
