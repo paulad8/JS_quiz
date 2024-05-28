@@ -278,5 +278,3 @@ const hardQuestions = [
         answer: "d",
     },
 ];
-
-module.exports = { easyQuestions, hardQuestions };
