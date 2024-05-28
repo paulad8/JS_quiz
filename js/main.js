@@ -2,7 +2,6 @@
 
 // Variables
 
-const { easyQuestions, hardQuestions } = require('./questions.js');
 const startGameArea = document.getElementById("start-game-area");
 const difficultyGameArea = document.getElementById("difficulty-game-area");
 const questionGameArea = document.getElementById("question-game-area");
@@ -22,8 +21,8 @@ const bronze = document.getElementById("bronze");
 const ded = document.getElementById("ded");
 let gameState = "start-game-area";
 let displayedQuestionNumber = 1;
-let currentQuestion = 0;
-let shuffledQuestions = 0;
+let currentQuestionIndex = 0; // Correctly initialise this variable
+let shuffledQuestions = [];
 let quizLength = 10;
 let currentQuestionSet = {};
 let setColour = 0;
@@ -33,6 +32,14 @@ let playAgain = document.getElementById("play-again-btn");
 let playerDifficulty;
 let answeredCorrect = 0;
 let answeredWrong = 0;
+
+// Reloads the site
+
+function reload() {
+    location.reload();
+}
+
+
 
 
 // Event Listeners
@@ -52,16 +59,12 @@ difficultyHardBtn.addEventListener("click", function (event) {
 });
 
 goHome.addEventListener("click", reload);
-nextQuestionBtn.addEventListener("click", nextQuestion);
+nextQuestionBtn.addEventListener("click", () => {
+    currentQuestionIndex++; // Move to the next question
+    renderQuestion(); // Render the next question
+});
 playAgain.addEventListener("click", reload);
 
-
-
-// Reloads the site
-
-function reload() {
-   location.reload();
-}
 
 /** When the play clicks 'Let's Go!', hides the start-game-area and shows the difficulty-game-area **/
 
@@ -94,7 +97,35 @@ function runQuiz(event) {
     }
 }
 
+renderQuestion(); // Call renderQuestion when starting the quiz
+
+// Function to populate the question area with the current question
+function renderQuestion() {
+    const currentQuestion = currentQuestionSet[currentQuestionIndex];
+    const questionTextElement = document.getElementById("question-text");
+    const answerButtons = document.querySelectorAll(".answer-btn");
+
+    // Set the question text
+    questionTextElement.textContent = currentQuestion.question;
+
+    // Set the answer options
+    answerButtons.forEach((button, index) => {
+        button.textContent = currentQuestion['option${index + 1}'];
+        button.value = String.fromCharCode(97 + index); // Assign values a, b, c, d to the buttons
+    });
+
+}
+
 function nextQuestion() {
+    updateQuestionNumber(currentQuestion); // Update the current question number display
+    if (currentQuestionIndex < quizLength) {
+        renderQuestion();
+    } else {
+        showResults();
+    }
+}
+
+/* function nextQuestion() {
     currentQuestionNumber.innerText = displayedQuestionNumber;
     displayedQuestionNumber++;
     currentQuestion++;
@@ -115,7 +146,7 @@ function nextQuestion() {
         answerButtons[i].classList.remove("correct");
         answerButtons[i].classList.remove("wrong");
     }
-}
+}*/
 
 function updateQuestionNumber(currentQuestionIndex) {
     const questionNumberElement = document.querySelector('.show-current-question');
@@ -124,15 +155,25 @@ function updateQuestionNumber(currentQuestionIndex) {
     }
 }
 
-/** 1 second delay to enabling nextQuestionBtn **/
+// 1 second delay to enabling nextQuestionBtn
 
 function showNextQuestionBtn() {
     setTimeout(function () {
         nextQuestionBtn.classList.remove("greyscale");
-        nextQuestionBtn.removeAttribute("disabled", "disabled");
+        nextQuestionBtn.removeAttribute("disabled");
         nextQuestionBtn.classList.add("hover");
     }, 1000);
 }
+
+// To display results
+
+function showResults() {
+    questionGameArea.classList.add("hide");
+    resultsGameArea.classList.remove("hide");
+    gameState = "results-game-area";
+    // Display results logic here...
+}
+
 
 
 /** Checks if the player has answered 10 questions,
@@ -141,6 +182,7 @@ function showNextQuestionBtn() {
 * Once all 10 questions have been answered, the gameState updates to resultsGameArea
 * with the calculated score and relevant congratulatory message and trophy.
 */
+
 
 function buildQuestions() {
     if (currentQuestion >= quizLength) {
@@ -196,20 +238,20 @@ function buildQuestions() {
     }
 }
 
-/** Validates the player's answer */
+// Validates the player's answer
 
         function checkAnswer() {
-            answer1.setAtribute("disabled", "disabled");
-            answer2.setAtribute("disabled", "disabled");
-            answer3.setAtribute("disabled", "disabled");
-            answer4.setAtribute("disabled", "disabled");
+            answer1.setAttribute("disabled", "disabled");
+            answer2.setAttribute("disabled", "disabled");
+            answer3.setAttribute("disabled", "disabled");
+            answer4.setAttribute("disabled", "disabled");
             answer1.classList.remove("answer-buttons-hover");
             answer2.classList.remove("answer-buttons-hover");
             answer3.classList.remove("answer-buttons-hover");
             answer4.classList.remove("answer-buttons-hover");
 
             let playerAnswer = this.value;
-            let correctAnswer = currentQuestionSet[currentQuestion].answer;
+            let correctAnswer = currentQuestionSet[currentQuestionIndex].answer;
             if (playerAnswer === correctAnswer) {
                 answerClicked = true;
                 setColour = "correct";
