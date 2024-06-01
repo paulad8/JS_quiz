@@ -21,9 +21,9 @@ const bronze = document.getElementById("bronze");
 const ded = document.getElementById("ded");
 let gameState = "start-game-area";
 let displayedQuestionNumber = 1;
-let currentQuestionIndex = 0; // Correctly initialise this variable
+let currentQuestionIndex = 0; // 
 let shuffledQuestions = [];
-let quizLength = 10;
+const quizLength = 10;
 let currentQuestions = [];
 let setColour = 0;
 let answerClicked = false;
@@ -74,6 +74,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Bind event listeners for difficulty buttons
     document.getElementById('difficulty-easy').addEventListener('click', () => startGame('easy'));
     document.getElementById('difficulty-hard').addEventListener('click', () => startGame('hard'));
+    document.getElementById('next-question').addEventListener('click' nextQuestion);
+    document.querySelectorAll('.answer-btn').forEach(button => {
+        button.addEventListener('click', checkAnswer)
+    });
 
 });
 
@@ -86,8 +90,7 @@ function setDifficulty(event) {
 
 }
 
-/** Depending on what difficulty the player selects, this function will run the quiz
-*/
+/** Depending on what difficulty the player selects, this function will run the quiz */
 
 function runQuiz(event) {
     difficultyGameArea.classList.add("hide");
@@ -110,18 +113,9 @@ function runQuiz(event) {
 
 
 
-
-
-function startGame(difficulty) {
-    currentQuestions = fetchData(difficulty);
-    currentQuestionIndex = 0;
-    answeredCorrect = 0;
-    answeredWrong = 0;
-    renderQuestion(currentQuestions[currentQuestionIndex]);
-}
-
+// Fetch questions based on difficulty
 function fetchData(difficulty) {
-    if (difficulty === 'easy') {
+     if (difficulty === 'easy') {
         return easyQuestions;
     } else if (difficulty === 'hard') {
         return hardQuestions;
@@ -129,6 +123,14 @@ function fetchData(difficulty) {
     return [];
 }
 
+// Shuffle the questions array
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
 
 function renderQuestion(data) {
     if (!data) return;
@@ -150,59 +152,119 @@ function renderQuestion(data) {
         });
     }
 
-    updateQuestionNumber();
+    updateQuestionNumber(currentQuestionIndex);
 }
 
+// Start the game with selected difficulty
+function startGame(difficulty) {
+    // Fetch data based on difficulty
+    currentQuestions = fetchData(difficulty);
+    // Shuffle the questions
+    currentQuestions = shuffleArray(currentQuestions);
 
+    //Initialise game state
+    currentQuestionIndex = 0;
+    answeredCorrect = 0;
+    answeredWrong = 0;
+    answerClicked = false;
+
+    // Render the first question
+    renderQuestion(currentQuestions[currentQuestionIndex]);
+}
+
+function checkAnswer() {
+    const answerButtons = document.querySelectorAll(".answer-btn");
+
+    // Disable all answer buttons and remove hover class
+    answerButtons.forEach(button => {
+        button.setAttribute("disabled", "disabled");
+        button.classList.remove("answer-buttons-hover");
+    });
+
+
+    // Get the player's selected answer and the correct answer
+    const playerAnswer = this.value;
+    const correctAnswer = currentQuestions[currentQuestionIndex].answer;
+
+    // Determine if the player's answer is correct or wrong
+    let isCorrect = playerAnswer === correctAnswer;
+    if (isCorrect) {
+        answeredCorrect++;
+    } else {
+        answeredWrong++;
+    }
+    answerClicked = true;
+
+    // Highlight correct and wrong answers
+    answerButtons.forEach(button => {
+        if (button.value === correctAnswer) {
+            button.classList.add("correct");
+        } else if (button.value === playerAnswer) {
+            button.classList.add("wrong");
+        }
+    });
+
+    // Show the next question button
+    showNextQuestionBtn();
+} 
 
 function nextQuestion() {
-    updateQuestionNumber(currentQuestion); // Update the current question number display
-    if (currentQuestionIndex < quizLength) {
-        renderQuestion();
+    updateQuestionNumber(currentQuestionIndex); // Update the current question number display
+    if (currentQuestionIndex < quizLength - 1) {
+        currentQuestionIndex++;
+        displayedQuestionNumber++;
+        renderQuestion(currentQuestions[currentQuestionIndex]);
+        resetButtons();
+        disableNextQuestionBtn();
     } else {
         showResults();
     }
 }
 
-/* function nextQuestion() {
-    currentQuestionNumber.innerText = displayedQuestionNumber;
-    displayedQuestionNumber++;
-    currentQuestion++;
-    buildQuestions();
-    nextQuestionBtn.classList.add("greyscale");
-    nextQuestionBtn.setAttribute("disabled", "disabled");
-    nextQuestionBtn.classList.remove("hover");
-    answer1.removeAttribute("disabled", "disabled");
-    answer2.removeAttribute("disabled", "disabled");
-    answer3.removeAttribute("disabled", "disabled");
-    answer4.removeAttribute("disabled", "disabled");
-    answer1.classList.add("answer-buttons-hover");
-    answer2.classList.add("answer-buttons-hover");
-    answer3.classList.add("answer-buttons-hover");
-    answer4.classList.add("answer-buttons-hover");
-    let answerButtons = document.getElementsByClassName("answer-btn");
-    for (let i = 0; i < answerButtons.length; i++) {
-        answerButtons[i].classList.remove("correct");
-        answerButtons[i].classList.remove("wrong");
-    }
-}*/
-
-function updateQuestionNumber(currentQuestionIndex) {
+// Function to update the question number display
+funtion updateQuestionNumber(index) {
     const questionNumberElement = document.querySelector('.show-current-question');
     if (questionNumberElement) {
-        questionNumberElement.innerText = currentQuestionIndex + 1; // Assuming index starts from 0
+        questionNumberElement.innerText = index + 1; // Assuming index starts from 0
     }
 }
 
-// 1 second delay to enabling nextQuestionBtn
+// Function to reset answer buttons
+function resetButtons() {
+    const answerButtons = document.querySelectorAll('.answer-btn');
+    answerButtons.forEach(button => {
+        button.removeAttribute('disabled');
+        button.classList.add('answer-buttons-hover');
+        button.classList.remove('correct', 'wrong');
+    });
+}
 
+// function to disable next question button
+function disableNextQuestionBtn() {
+    const nextQuestionBtn = document.getElementById('next-question');
+    if (nextQuestionBtn) {
+        nextQuestionBtn.classList.add('greyscale');
+        nextQuestionBtn.setAttribute('dsabled', 'disabled');
+        nextQuestionBtn.classList.remove('hover');
+    }
+}
+
+// Funciton to show the next question button after a delay
 function showNextQuestionBtn() {
     setTimeout(function () {
-        nextQuestionBtn.classList.remove("greyscale");
-        nextQuestionBtn.removeAttribute("disabled");
-        nextQuestionBtn.classList.add("hover");
+        const nextQuestionBtn = document.getElementById('next-question');
+        if (nextQuestionBtn) {
+            nextQuestionBtn.classList.remove('greyscale');
+            nextQuestionBtn.removeAttribute('disabled');
+            nextQuestionBtn.classList.add('hover');
+        }
     }, 1000);
 }
+
+
+
+
+
 
 // To display results
 
@@ -280,41 +342,6 @@ function showResults() {
 
 // Validates the player's answer
 
-function checkAnswer() {
-    const answerButtons = document.querySelectorAll(".answer-btn");
-
-    // Disable all answer buttons and remove hover class
-    answerButtons.forEach(button => {
-        button.setAttribute("disabled", "disabled");
-        button.classList.remove("answer-buttons-hover");
-    });
-
-
-    // Get the player's selected answer and the correct answer
-    const playerAnswer = this.value;
-    const correctAnswer = currentQuestions[currentQuestionIndex].answer;
-
-    // Determine if the player's answer is correct or wrong
-    let isCorrect = playerAnswer === correctAnswer;
-    if (isCorrect) {
-        answeredCorrect++;
-    } else {
-        answeredWrong++;
-    }
-    answerClicked = true;
-
-    // Highlight correct and wrong answers
-    answerButtons.forEach(button => {
-        if (button.value === correctAnswer) {
-            button.classList.add("correct");
-        } else if (button.value === playerAnswer) {
-            button.classList.add("wrong");
-        }
-    });
-
-    // Show the next question button
-    showNextQuestionBtn();
-}
 
 
 
