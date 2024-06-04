@@ -1,7 +1,5 @@
 ﻿/*jshint esversion: 6 */
 
-// Variables
-
 const startGameArea = document.getElementById("start-game-area");
 const difficultyGameArea = document.getElementById("difficulty-game-area");
 const questionGameArea = document.getElementById("question-game-area");
@@ -13,22 +11,22 @@ const answer1 = document.getElementById("answer1-btn");
 const answer2 = document.getElementById("answer2-btn");
 const answer3 = document.getElementById("answer3-btn");
 const answer4 = document.getElementById("answer4-btn");
-const currentQuestionNumber = document.getElementById("show-current-question");
+const currentQuestionNumber = document.querySelector(".show-current-question");
 const questionText = document.getElementById("question-text");
+const goHome = document.getElementById("home-icon");
+const playAgain = document.getElementById("play-again-btn");
 const gold = document.getElementById("gold");
 const silver = document.getElementById("silver");
 const bronze = document.getElementById("bronze");
 const ded = document.getElementById("ded");
+
 let gameState = "start-game-area";
 let displayedQuestionNumber = 1;
-let currentQuestionIndex = 0; // 
+let currentQuestionIndex = 0;
 let shuffledQuestions = [];
 const quizLength = 10;
 let currentQuestions = [];
-let setColour = 0;
 let answerClicked = false;
-let goHome = document.getElementById("home-icon");
-let playAgain = document.getElementById("play-again-btn");
 let playerDifficulty;
 let answeredCorrect = 0;
 let answeredWrong = 0;
@@ -40,58 +38,50 @@ function reload() {
 }
 
 
-
-
 // Event Listeners
 document.getElementById("play").addEventListener("click", setDifficulty);
-difficultyEasyBtn.addEventListener("click", function(event) {
-    this.innerText = "Loading.."; //Change the button text
+difficultyEasyBtn.addEventListener("click", function (event) {
+    this.innerText = "Loading.."; // Change the button text
     setTimeout(function () {
         runQuiz(event); // Pass the event object to runQuiz
-    }, 1000); //Wait for a second before running the quiz
+    }, 1000); // Wait for a second before running the quiz
 });
 
 difficultyHardBtn.addEventListener("click", function (event) {
-    this.innerText = "Loading.."; //Change the button text
+    this.innerText = "Loading.."; // Change the button text
     setTimeout(function () {
         runQuiz(event); // Pass the event object to runQuiz
-    }, 1000); //Wait for a second before running the quiz
+    }, 1000); // Wait for a second before running the quiz
 });
 
 goHome.addEventListener("click", reload);
-nextQuestionBtn.addEventListener("click", () => {
-    currentQuestionIndex++; // Move to the next question
-    renderQuestion(); // Render the next question
-});
+nextQuestionBtn.addEventListener("click", nextQuestion);
 playAgain.addEventListener("click", reload);
 
 // Event listener for answer buttons
-document.querySelectorAll('answer-btn').forEach(button => {
-    button.addEventListener('click', checkAnswer);
+document.querySelectorAll(".answer-btn").forEach(button => {
+    button.addEventListener("click", checkAnswer);
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Bind event listeners for difficulty buttons
-    document.getElementById('difficulty-easy').addEventListener('click', () => startGame('easy'));
-    document.getElementById('difficulty-hard').addEventListener('click', () => startGame('hard'));
-    document.getElementById('next-question').addEventListener('click' nextQuestion);
-    document.querySelectorAll('.answer-btn').forEach(button => {
-        button.addEventListener('click', checkAnswer)
+// Event listener setup on DOMContentLoaded
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("difficulty-easy").addEventListener("click", () => startGame("easy"));
+    document.getElementById("difficulty-hard").addEventListener("click", () => startGame("hard"));
+    document.querySelectorAll(".answer-btn").forEach(button => {
+        button.addEventListener("click", checkAnswer);
     });
-
 });
 
 
 
-function setDifficulty(event) {
+function setDifficulty() {
     startGameArea.classList.add("hide");
     difficultyGameArea.classList.remove("hide");
     gameState = "difficulty-game-area";
-
 }
 
-/** Depending on what difficulty the player selects, this function will run the quiz */
 
+/** Depending on what difficulty the player selects, this function will run the quiz */
 function runQuiz(event) {
     difficultyGameArea.classList.add("hide");
     questionGameArea.classList.remove("hide");
@@ -109,15 +99,17 @@ function runQuiz(event) {
         playerDifficulty = "hard";
         difficultyHardBtn.innerText = "Loading...";
     }
-}
 
+    // Start the game
+    startGame(difficulty);
+}
 
 
 // Fetch questions based on difficulty
 function fetchData(difficulty) {
-     if (difficulty === 'easy') {
+    if (difficulty === "easy") {
         return easyQuestions;
-    } else if (difficulty === 'hard') {
+    } else if (difficulty === "hard") {
         return hardQuestions;
     }
     return [];
@@ -132,11 +124,12 @@ function shuffleArray(array) {
     return array;
 }
 
+
 function renderQuestion(data) {
     if (!data) return;
 
-    const questionText = document.getElementById('question-text');
-    const answerButtons = document.querySelectorAll('.answer-btn');
+    const questionText = document.getElementById("question-text");
+    const answerButtons = document.querySelectorAll(".answer-btn");
 
     if (questionText) {
         questionText.textContent = data.question;
@@ -162,7 +155,7 @@ function startGame(difficulty) {
     // Shuffle the questions
     currentQuestions = shuffleArray(currentQuestions);
 
-    //Initialise game state
+    // Initialize game state
     currentQuestionIndex = 0;
     answeredCorrect = 0;
     answeredWrong = 0;
@@ -172,6 +165,7 @@ function startGame(difficulty) {
     renderQuestion(currentQuestions[currentQuestionIndex]);
 }
 
+
 function checkAnswer() {
     const answerButtons = document.querySelectorAll(".answer-btn");
 
@@ -180,7 +174,6 @@ function checkAnswer() {
         button.setAttribute("disabled", "disabled");
         button.classList.remove("answer-buttons-hover");
     });
-
 
     // Get the player's selected answer and the correct answer
     const playerAnswer = this.value;
@@ -206,10 +199,9 @@ function checkAnswer() {
 
     // Show the next question button
     showNextQuestionBtn();
-} 
+}
 
 function nextQuestion() {
-    updateQuestionNumber(currentQuestionIndex); // Update the current question number display
     if (currentQuestionIndex < quizLength - 1) {
         currentQuestionIndex++;
         displayedQuestionNumber++;
@@ -222,8 +214,8 @@ function nextQuestion() {
 }
 
 // Function to update the question number display
-funtion updateQuestionNumber(index) {
-    const questionNumberElement = document.querySelector('.show-current-question');
+function updateQuestionNumber(index) {
+    const questionNumberElement = document.querySelector(".show-current-question");
     if (questionNumberElement) {
         questionNumberElement.innerText = index + 1; // Assuming index starts from 0
     }
@@ -231,43 +223,37 @@ funtion updateQuestionNumber(index) {
 
 // Function to reset answer buttons
 function resetButtons() {
-    const answerButtons = document.querySelectorAll('.answer-btn');
+    const answerButtons = document.querySelectorAll(".answer-btn");
     answerButtons.forEach(button => {
-        button.removeAttribute('disabled');
-        button.classList.add('answer-buttons-hover');
-        button.classList.remove('correct', 'wrong');
+        button.removeAttribute("disabled");
+        button.classList.add("answer-buttons-hover");
+        button.classList.remove("correct", "wrong");
     });
 }
 
-// function to disable next question button
+// Function to disable next question button
 function disableNextQuestionBtn() {
-    const nextQuestionBtn = document.getElementById('next-question');
+    const nextQuestionBtn = document.getElementById("next-question");
     if (nextQuestionBtn) {
-        nextQuestionBtn.classList.add('greyscale');
-        nextQuestionBtn.setAttribute('dsabled', 'disabled');
-        nextQuestionBtn.classList.remove('hover');
+        nextQuestionBtn.classList.add("greyscale");
+        nextQuestionBtn.setAttribute("disabled", "disabled");
+        nextQuestionBtn.classList.remove("hover");
     }
 }
 
-// Funciton to show the next question button after a delay
+// Function to show the next question button after a delay
 function showNextQuestionBtn() {
     setTimeout(function () {
-        const nextQuestionBtn = document.getElementById('next-question');
+        const nextQuestionBtn = document.getElementById("next-question");
         if (nextQuestionBtn) {
-            nextQuestionBtn.classList.remove('greyscale');
-            nextQuestionBtn.removeAttribute('disabled');
-            nextQuestionBtn.classList.add('hover');
+            nextQuestionBtn.classList.remove("greyscale");
+            nextQuestionBtn.removeAttribute("disabled");
+            nextQuestionBtn.classList.add("hover");
         }
     }, 1000);
 }
 
-
-
-
-
-
 // To display results
-
 function showResults() {
     questionGameArea.classList.add("hide");
     resultsGameArea.classList.remove("hide");
@@ -276,13 +262,6 @@ function showResults() {
 }
 
 
-
-/** Checks if the player has answered 10 questions,
-* if not will loop through the questions and display them to the player.
-* Listens for the player's answer and then calls checkAnswer() to validate.
-* Once all 10 questions have been answered, the gameState updates to resultsGameArea
-* with the calculated score and relevant congratulatory message and trophy.
-*/
 
 
 /*function buildQuestions() {
@@ -339,15 +318,4 @@ function showResults() {
     }
 }
 */
-
-// Validates the player's answer
-
-
-
-
-        
-
-/** Applies a colour to the element based on correct or wrong answer submitted */
-
-// function setColourBlock() { }
 
