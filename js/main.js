@@ -262,46 +262,40 @@ function showResults() {
 }
 
 
-
-
-/*function buildQuestions() {
+function displayFinalResults() {
     if (currentQuestion >= quizLength) {
         questionGameArea.classList.add("hide");
         resultsGameArea.classList.remove("hide");
-        gameState = "results-game-area";
+        gameState = "results-game-area
+
         if (answeredCorrect == 10) {
-            document.getElementById("results-header").innerText = `${Excellent}`;
+            document.getElementById("results-header").innerText = "Excellent";
             silver.classList.add("hide");
             bronze.classList.add("hide");
             ded.classList.add("hide");
             gold.classList.remove("hide");
-            document.getElementById("results-body-text").innerText = `You answered ${answeredCorrect}
-            ${playerDifficulty} questions correct.`;
         } else if (answeredCorrect == 7 || answeredCorrect == 8 || answeredCorrect == 9) {
-            document.getElementById("results-header").innerText = `${Great}`;
+            document.getElementById("results-header").innerText = "Great";
             silver.classList.remove("hide");
             bronze.classList.add("hide");
             ded.classList.add("hide");
             gold.classList.add("hide");
-            document.getElementById("results-body-text").innerText = `You answered ${answeredCorrect}
-            ${playerDifficulty} questions correct.`;
         } else if (answeredCorrect == 4 || answeredCorrect == 5 || answeredCorrect == 6) {
-            document.getElementById("results-header").innerText = `${Nice}`;
+            document.getElementById("results-header").innerText = "Nice";
             silver.classList.add("hide");
             bronze.classList.remove("hide");
             ded.classList.add("hide");
             gold.classList.add("hide");
-            document.getElementById("results-body-text").innerText = `You answered ${answeredCorrect}
-            ${playerDifficulty} questions correct.`;
         } else if (answeredCorrect <= 3) {
-            document.getElementById("results-header").innerText = `${Fail}`;
+            document.getElementById("results-header").innerText = "Fail";
             silver.classList.add("hide");
             bronze.classList.add("hide");
             ded.classList.remove("show");
             gold.classList.add("hide");
-            document.getElementById("results-body-text").innerText = `You answered ${answeredCorrect}
-            ${playerDifficulty} questions correct.`;
-        } else {
+        }
+
+        document.getElementById("results-body-text").innerText = 'You answered ${answeredCorrect} ${playerDifficulty} questions correct.';
+    } else {
             gameState = "question-game-area";
             for (let i = 0; i < currentQuestionSet.length; i++) {
                 questionText.innerHTML = currentQuestionSet[currentQuestion].question;
@@ -314,8 +308,7 @@ function showResults() {
                 answer3.onclick = checkAnswer;
                 answer4.onclick = checkAnswer;
             }
-        }
+       
     }
 }
-*/
 
