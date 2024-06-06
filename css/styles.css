@@ -42,61 +42,15 @@ footer {
 
 }
 
+/* Areas */
+
 .masthead {
     background-position: center;
     background-size: cover;
-    
-    
 }
 
 
-.start-game-area {
-    width: 60%;
-    height: auto;
-    max-width: 500px;
-    background-color: #bde3ff;
-    color: black;
-    margin: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 10px;
-    box-shadow: 4px 8px 4px rgb(225,225,225);
-    display: block;
-    align-items: center;
-    text-align: center;
-
-}
-
-.game-header {
-    width: auto;
-    height: 48px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 15px 0 15px;
-}
-
-.difficulty-game-area {
-    width: 60%;
-    height: auto;
-    max-width: 500px;
-    background-color: #bde3ff;
-    color: black;
-    margin: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 10px;
-    box-shadow: 4px 8px 4px rgb(225,225,225);
-    display: block;
-    align-items: center;
-    text-align: center;
-}
-
-.question-game-area {
+.start-game-area, .difficulty-game-area, .question-game-area, .results-game-area {
     width: 60%;
     height: auto;
     max-width: 500px;
@@ -115,35 +69,31 @@ footer {
 }
 
 .results-game-area {
-    width: 60%;
-    height: auto;
-    max-width: 500px;
     background-color: #176087;
-    color: black;
-    margin: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 10px;
-    box-shadow: 4px 8px 4px rgb(225,225,225);
-    display: block;
+}
+
+
+.game-header {
+    width: auto;
+    height: 48px;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    text-align: center;
+    padding: 0 15px;
 }
 
 .current-question  {
     font-size: .8rem;
     font-family: sans-serif;
-
 }
 
-.home-icon {
-    width: 38px;
-    cursor: pointer;
+.hide {
+    display: none;
 }
 
-.help-icon  {
+/* Icon styles */
+
+.home-icon, .help-icon {
     width: 38px;
     cursor: pointer;
 }
@@ -155,10 +105,26 @@ footer {
     right: 22%;
 }
 
+/* Button Styles */
 
-.hide  {
-    display: none;
+button {
+    background-color: white;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgb(188,188,188);
+    color: rgb(88, 88, 88);
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 10px 35px;
+    margin: 10px 25px;
 }
+
+    button:active {
+        background-color: lightgrey;
+        box-shadow: 0 2px 4px rgb(188,188,188);
+        color: rgb(88, 88, 88);
+        outline: none;
+    }
 
 .greyscale  {
     filter: grayscale(100%);
@@ -180,12 +146,29 @@ footer {
     box-shadow: none;
 }
 
-.correct  {
-    background-color: rgb(12, 114, 12);
+/* Answer button states */
+
+.correct, .wrong {
+    color: white !important;
 }
 
-.wrong  {
-    background-color: rgb(143,22,22);
+.correct {
+    background-color: green !important;
+    color: white !important;
+}
+
+.wrong {
+    background-color: red !important;
+    color: white !important;
+}
+
+/* Answer button default and hover state */
+.answer-btn {
+    color: black;
+}
+
+.answer-btn.answer-buttons-hover:hover {
+    background-color: #ddd;
 }
 
 .play-again-btn-hover:hover {
@@ -196,6 +179,7 @@ footer {
     box-shadow: none;
 }
 
+/* Next question button */
 .next-question button {
     margin-top: 15px;
     margin-bottom: 15px;
@@ -207,12 +191,13 @@ footer {
 }
 
     .next-question button:hover {
-        
         border: solid 2pt #bde3ff;
         color: white;
         box-shadow: none;
     }
 
+
+/* Modal */
 .modal-container {
     background-color: transparent;
     display: flex;
@@ -249,12 +234,9 @@ footer {
     align-items: center;
 }
 
-h3,
-h4,
-h5,
-p  {
+/* Typography */
+h1, h2, h3, h4, h5, p  {
     font-family: 'Poppins', sans-serif;
-   
 }
 
 h1 {
@@ -263,7 +245,7 @@ h1 {
     color: black;
     text-align: center;
     text-shadow: 2px 2px 2px rgb(240,248,255);
-    padding: 25px 0 25px 0;
+    padding: 25px 0;
 }
 
 h2 {
@@ -272,7 +254,8 @@ h2 {
     color: black;
     text-align: center;
     text-shadow: 2px 2px 2px rgb(240,248,255);
-    padding: 20px 0 20px 0;
+    padding: 20px 0;
+    position: relative;
 }
 
 
@@ -300,6 +283,7 @@ p {
     padding: 0 35px 35px 35px;
 }
 
+/* Results */
 .results-header {
     color: white;
     text-shadow: none;
@@ -318,29 +302,9 @@ p {
     font-size: xx-large;
 }
 
-button {
-    background-color: white;
-    border: 0;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgb(188,188,188);
-    color: rgb(88, 88, 88);
-    font-size: 1rem;
-    font-weight: 500;
-    padding: 10px 35px;
-    margin: 10px 25px;
-}
-
-    button:active {
-        background-color: lightgrey;
-        box-shadow: 0 2px 4px rgb(188,188,188);
-        color: rgb(88, 88, 88);
-        outline: none;
-    }
-
 hr  {
     margin-top: 20px;
     border: 0;
     height: 1px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
-
