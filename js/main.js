@@ -15,10 +15,6 @@ const currentQuestionNumber = document.querySelector(".show-current-question");
 const questionText = document.getElementById("question-text");
 const goHome = document.getElementById("home-icon");
 const playAgain = document.getElementById("play-again-btn");
-const gold = document.getElementById("gold");
-const silver = document.getElementById("silver");
-const bronze = document.getElementById("bronze");
-const ded = document.getElementById("ded");
 
 let gameState = "start-game-area";
 let displayedQuestionNumber = 1;
@@ -217,7 +213,7 @@ function nextQuestion() {
 function updateQuestionNumber(index) {
     const questionNumberElement = document.querySelector(".show-current-question");
     if (questionNumberElement) {
-        questionNumberElement.innerText = index + 1; // Assuming index starts from 0
+        questionNumberElement.innerText = index + 1; 
     }
 }
 
@@ -258,57 +254,38 @@ function showResults() {
     questionGameArea.classList.add("hide");
     resultsGameArea.classList.remove("hide");
     gameState = "results-game-area";
-    // Display results logic here...
-}
+
+    const resultsHeader = document.getElementById("results-header");
+    const goldIcon = document.getElementById("gold");
+    const silverIcon = document.getElementById("silver");
+    const bronzeIcon = document.getElementById("bronze");
+    const dedIcon = document.getElementById("ded");
+    const resultsBodyText = document.getElementById("results-body-text");
 
 
-function displayFinalResults() {
-    if (currentQuestion >= quizLength) {
-        questionGameArea.classList.add("hide");
-        resultsGameArea.classList.remove("hide");
-        gameState = "results-game-area
+    // Ensure all icons are hidden initially
+    [goldIcon, silverIcon, bronzeIcon, dedIcon].forEach(icon => {
+        icon.classList.add("hide");
+    });
 
-        if (answeredCorrect == 10) {
-            document.getElementById("results-header").innerText = "Excellent";
-            silver.classList.add("hide");
-            bronze.classList.add("hide");
-            ded.classList.add("hide");
-            gold.classList.remove("hide");
-        } else if (answeredCorrect == 7 || answeredCorrect == 8 || answeredCorrect == 9) {
-            document.getElementById("results-header").innerText = "Great";
-            silver.classList.remove("hide");
-            bronze.classList.add("hide");
-            ded.classList.add("hide");
-            gold.classList.add("hide");
-        } else if (answeredCorrect == 4 || answeredCorrect == 5 || answeredCorrect == 6) {
-            document.getElementById("results-header").innerText = "Nice";
-            silver.classList.add("hide");
-            bronze.classList.remove("hide");
-            ded.classList.add("hide");
-            gold.classList.add("hide");
-        } else if (answeredCorrect <= 3) {
-            document.getElementById("results-header").innerText = "Fail";
-            silver.classList.add("hide");
-            bronze.classList.add("hide");
-            ded.classList.remove("show");
-            gold.classList.add("hide");
-        }
-
-        document.getElementById("results-body-text").innerText = 'You answered ${answeredCorrect} ${playerDifficulty} questions correct.';
+    // Update the results based on the number of correct answers
+    if (answeredCorrect === 10) {
+        resultsHeader.innerText = "Excellent";
+        goldIcon.classList.remove("hide");
+    } else if (answeredCorrect >= 7) {
+        resultsHeader.innerText = "Great";
+        silverIcon.classList.remove("hide");
+    } else if (answeredCorrect >= 4) {
+        resultsHeader.innerText = "Nice";
+        bronzeIcon.classList.remove("hide");
     } else {
-            gameState = "question-game-area";
-            for (let i = 0; i < currentQuestionSet.length; i++) {
-                questionText.innerHTML = currentQuestionSet[currentQuestion].question;
-                answer1.innerHTML = currentQuestionSet[currentQuestion].a;
-                answer2.innerHTML = currentQuestionSet[currentQuestion].b;
-                answer3.innerHTML = currentQuestionSet[currentQuestion].c;
-                answer4.innerHTML = currentQuestionSet[currentQuestion].d;
-                answer1.onclick = checkAnswer;
-                answer2.onclick = checkAnswer;
-                answer3.onclick = checkAnswer;
-                answer4.onclick = checkAnswer;
-            }
-       
+        resultsHeader.innerText = "Fail";
+        dedIcon.classList.remove("hide");
     }
-}
 
+    resultsBodyText.innerText = `You answered ${answeredCorrect} ${playerDifficulty} questions correctly.`;
+} 
+
+if (currentQuestions >= quizLength) {
+    showResults();
+}
