@@ -82,7 +82,7 @@ Wireframes, concept prototypes and user journeys were mapped out using [Figma](h
 #### FRAMEWORKS, LIBRARIES & TOOLS
 - <composite image> to create the multi-device mock-up 
 - [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/ "A complete guide to Flexbox") - CSS flexbox layout system to provide structure and responsiveness to all elements
-- [Figma](https://www.figma.com "Figma home") - used to map out the prototype
+- [Figma](https://www.figma.com "Figma home") - used to map out the user flow and create the prototype
 - [Favicon](https://favicon.io/ "Favicon home") - to create the Favicon
 - [Visual Studio](https://visualstudio.microsoft.com/vs/mac/ "Visual Studio home") - chosen IDE
 - [GitHub](https://github.com/ "GitHub home") - hosting, version control and deployment
