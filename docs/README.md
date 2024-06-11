@@ -34,7 +34,7 @@ To create a fun and interactive online quiz that incorporates appropriate use of
 Web users with an interest in world trivia, general knowledge quizzes or keen to play a fun, online game with simple rules and graphics. 
 
 #### USER REQUIREMENTS
-- Easy to understand quiz rules
+- Easy-to-understand quiz rules
 - Simple navigation
 - Logical presentation and flow of content 
 - Responsive website that allows users to play on any device
@@ -67,7 +67,8 @@ Google Fonts are incorporated into the website. **Ysabeau Office** for the headi
 Designed to be quick to learn and easy to navigate, Quizly is a single-page website. When a player visits the website, they are greeted with a Welcome message on the landing page. The user clicks a button to enter the quiz, they are then given the option to select their level of difficulty. At this point, the quiz has further navigational features; return to home or help for more information. Once the player has answered all the questions in their chosen level of difficulty, they will be presented with the number of correct responses and the corresponding award (Gold, Silver, Bronze or Try again) and the option to play again, which once clicked, will return them to the home page. 
 
 #### PROTOTYPES
-Wireframes, concept prototypes and user journeys were mapped out using [Figma](https://www.figma.com "Figma home"). 
+Wireframes, concept prototypes and user journeys were mapped out using [Figma](https://www.figma.com "Figma home"). </br>
+*Note: late stage change from open-ended questions to multiple choice for 'hard' questions. This is not reflected in the prototype below*
    
 ![Prototype: User Journey](/docs/Prototype_User-journey.png)
 
@@ -99,14 +100,15 @@ All code validated via the [W3C HTML Validation Service](https://validator.w3.or
 I chose to use multiple JavaScript files, each designed to provide functionality for specific features, to organise and modularise particular processes. As a result, I encountered some difficulties with referencing and parsing the scripts and a troublesome CORS error. After a series of debugging efforts, I realised I needed to run the program in a node.js environment. After installing node.js and a range of relevant packages, the CORS error disappeared, and I was able to proceed with improving the game's functionality. 
 
 #### HTML VALIDATION 
-[HTML Validation output](/docs/HTML-validator.png)
+![HTML Validation output](/docs/HTML-validator.png)
 
 
 #### CSS VALIDATION
-[CSS Validation output](/docs/CSS-validator.png)
+![CSS Validation output](/docs/CSS-validator.png)
 
 #### JavaScript VALIDATION 
-[JSLint Validation output](/docs/JSLint-output.png)
+![JSLint Validation output](/docs/JSLint-output.png)
+</br>
 undefined variables are defined in questions.js
 
 
