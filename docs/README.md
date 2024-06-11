@@ -7,7 +7,7 @@ Code Institute's Milestone Project 2 is the culmination of the successful comple
 Designed to demonstrate competency in the three fundamental coding and programming languages and creativity in the choice of quiz. 
 
 
-<Visit live website>
+[Visit live site](https://paulad8.github.io/Quizly/)
 
 <Insert composite image of game screenshots>
 
@@ -47,7 +47,7 @@ Web users with an interest in world trivia, general knowledge quizzes or keen to
 ### DESIGN
 
 #### COLOUR PALETTE 
-Consistent across all devices, the colour palette was inspired by our big, blue sky and passenger air travel, so shades of blue, grey and white were used. 
+The colour palette, which is consistent across all devices, was inspired by our big, blue sky and passenger air travel, so shades of blue, grey, and white were used. 
 
 ![QUIZLY Colour pallette](/docs/QUIZLY-colour-palette.png)
 
@@ -64,7 +64,7 @@ Credit: [Freepik](https://www.freepik.com/free-vector/hand-drawn-world-tourism-d
 Google Fonts are incorporated into the website. **Ysabeau Office** for the heading and sub-headings and **Poppins** for all other scales with a standard sans serif fallback. These styles were selected to reflect the _fun_ aspect of the game while also being legible and clear. 
 
 #### STRUCTURE
-Designed to be quick to learn and easy to navigate, Quizly is a single-page website. When a player visits the website, they are greeted with a Welcome message on the landing page. The user clicks a button to enter the quiz, they are then given the option to select their level of difficulty. At this point, the quiz has further navigational features; return to home or help for more information. Once the player has answered all the questions in their chosen level of difficulty, they will be presented with the number of correct responses and the corresponding award (Gold, Silver, Bronze or Try again) and the option to play again, which once clicked, will return them to the home page. 
+Designed to be quick to learn and easy to navigate, Quizly is a single-page website. When a player visits the website, they are greeted with a Welcome message on the landing page. The user clicks a button to enter the quiz, and they are then given the option to select their level of difficulty. At this point, the quiz has further navigational features; return to home or help for more information. Once the player has answered all the questions in their chosen level of difficulty, they will be presented with the number of correct responses and the corresponding award (Gold, Silver, Bronze or Try again) and the option to play again, which once clicked, will return them to the home page. 
 
 #### PROTOTYPES
 Wireframes, concept prototypes and user journeys were mapped out using [Figma](https://www.figma.com "Figma home"). </br>
@@ -119,14 +119,12 @@ The website was tested for:
 - Best practice - conforms to current industry best practice standards
 - SEO - Search engine optimisation. Ranks the site 
 
-<insert images>
+![Mobile](/docs/Lighthouse-mobile.png)
+
+![Desktop](/docs/Lighthouse-web.png)
 
 #### ACCESSIBILITY
-A11y
-<insert image/s> 
-
-Mobile simulator
-<insert image/s>
+![A11y Colour Contrast Tool](/docs/A11y-colour-contrast.png)
 
 #### MANUAL TESTING
 Throughout development, I carried out a range of manual testing to ensure functionality was as intended. 
