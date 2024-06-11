@@ -99,14 +99,14 @@ All code validated via the [W3C HTML Validation Service](https://validator.w3.or
 I chose to use multiple JavaScript files, each designed to provide functionality for specific features, to organise and modularise particular processes. As a result, I encountered some difficulties with referencing and parsing the scripts and a troublesome CORS error. After a series of debugging efforts, I realised I needed to run the program in a node.js environment. After installing node.js and a range of relevant packages, the CORS error disappeared, and I was able to proceed with improving the game's functionality. 
 
 #### HTML VALIDATION 
-[HTML Validation output](/docs)
+[HTML Validation output](/docs/HTML-validator.png)
 
 
 #### CSS VALIDATION
-[CSS Validation output](/docs)
+[CSS Validation output](/docs/CSS-validator.png)
 
 #### JavaScript VALIDATION 
-[JSLint Validation output]
+[JSLint Validation output](/docs/JSLint-output.png)
 undefined variables are defined in questions.js
 
 
