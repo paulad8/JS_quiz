@@ -94,21 +94,20 @@ Wireframes, concept prototypes and user journeys were mapped out using [Figma](h
 ***
 
 ## TESTING
-All code validated via the [W3C HTML Validation Service](https://validator.w3.org/) , [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) and [JSHint](https://jshint.com/) to detect errors and potential problems in the code. 
+All code validated via the [W3C HTML Validation Service](https://validator.w3.org/), [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) and [JSHint](https://jshint.com/) to detect errors and potential problems in the code. 
 
-! outline errors (if any) and steps to resolve. Provide screenshots 
-
-Note: Due to multiple JavaScript files, each designed to provide functionality for specific features, .... 
+I chose to use multiple JavaScript files, each designed to provide functionality for specific features, to organise and modularise particular processes. As a result, I encountered some difficulties with referencing and parsing the scripts and a troublesome CORS error. After a series of debugging efforts, I realised I needed to run the program in a node.js environment. After installing node.js and a range of relevant packages, the CORS error disappeared, and I was able to proceed with improving the game's functionality. 
 
 #### HTML VALIDATION 
-<insert image here>
+[HTML Validation output](/docs)
 
 
 #### CSS VALIDATION
-<insert image here>
+[CSS Validation output](/docs)
 
 #### JavaScript VALIDATION 
-<insert image here>
+[JSLint Validation output]
+undefined variables are defined in questions.js
 
 
 #### LIGHTHOUSE TESTING 
@@ -134,7 +133,7 @@ These included:
 
 * Landing page
     *   Page loads correctly
-    *   User can clearly see and interact with the site
+    *   User can clearly see and interact with the site; button states change from active to hover to clicked.
     *   Clicking the 'Let's go!' button will start the game and direct the user to the next section - Choosing the level of difficulty. 
 
 * Navigation 
@@ -146,19 +145,19 @@ These included:
     * Clicking either 'easy' or 'hard' will load the respective questions in a randomised order each time. 
 
 * Question section 
-    * Questions and answer options (easy) / text area (hard) displayed correctly
-    * Answer options/text area is enabled once the question has loaded
+    * Questions and answer options are displayed correctly
+    * Answer options are enabled once the question has loaded
     * Question counter increments correctly with each question answered
-    * Selected answer will trigger the appropriate text banner (red = incorrect / green = correct)
+    * Selected answer will trigger the appropriate colour change to the button (red = incorrect and green = correct)
     * 'Next Question' icon is disabled until the user has submitted an answer
     * 'Next Question' icon enabled after the answer submitted
-    * Once the 'next question' icon has been clicked, the next question will be correctly loaded and continue           until all questions (easy = 15 questions / hard = 10 questions) in that section have been answered. 
+    * Once the 'next question' icon has been clicked, the next question will be correctly loaded and continue until all 10 questions have been answered. 
     * When all questions for the section have been answered, the results section will be triggered. 
 
 *   Results section 
     *   Section is rendered correctly 
     *   Questions answered correctly are counted in the back end and presented as a total to the user with the                 appropriate tribute and award icon
-    *   Verify the 'play again' button is enabled and will work as intended - to reload the website and direct the             user to the home page. 
+    *   Verify that the 'play again' button is enabled and will work as intended—to reload the website and direct the user to the home page. 
 
 #### BROWSER COMPATIBILITY
 This website has been manually tested on the browsers listed below, with additional testing via Lighthouse. 
@@ -167,12 +166,12 @@ This website has been manually tested on the browsers listed below, with additio
 - Firefox
 
 #### BUGS
-...
+The majority of the bugs were syntax errors and not calling the correct element within the functions. I also needed to refactor the logic to improve clarity, remove any redundancies, bloat and modularise for simplicity. CORS error was a major stumbling block until I ran the program in a node.js environment. 
 
 ***
 
 ### DEPLOYMENT
-This website was deployed to GitHub Pages. 
+This website was deployed to GitHub Pages June 2024. 
 ***
 
 ### CREDITS
