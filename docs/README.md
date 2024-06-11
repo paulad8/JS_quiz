@@ -34,7 +34,7 @@ To create a fun and interactive online quiz that incorporates appropriate use of
 Web users with an interest in world trivia, general knowledge quizzes or keen to play a fun, online game with simple rules and graphics. 
 
 #### USER REQUIREMENTS
-- Easy to understand quiz rules
+- Easy-to-understand quiz rules
 - Simple navigation
 - Logical presentation and flow of content 
 - Responsive website that allows users to play on any device
@@ -67,7 +67,8 @@ Google Fonts are incorporated into the website. **Ysabeau Office** for the headi
 Designed to be quick to learn and easy to navigate, Quizly is a single-page website. When a player visits the website, they are greeted with a Welcome message on the landing page. The user clicks a button to enter the quiz, they are then given the option to select their level of difficulty. At this point, the quiz has further navigational features; return to home or help for more information. Once the player has answered all the questions in their chosen level of difficulty, they will be presented with the number of correct responses and the corresponding award (Gold, Silver, Bronze or Try again) and the option to play again, which once clicked, will return them to the home page. 
 
 #### PROTOTYPES
-Wireframes, concept prototypes and user journeys were mapped out using [Figma](https://www.figma.com "Figma home"). 
+Wireframes, concept prototypes and user journeys were mapped out using [Figma](https://www.figma.com "Figma home"). </br>
+*Note: late stage change from open-ended questions to multiple choice for 'hard' questions. This is not reflected in the prototype below*
    
 ![Prototype: User Journey](/docs/Prototype_User-journey.png)
 
@@ -94,21 +95,21 @@ Wireframes, concept prototypes and user journeys were mapped out using [Figma](h
 ***
 
 ## TESTING
-All code validated via the [W3C HTML Validation Service](https://validator.w3.org/) , [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) and [JSHint](https://jshint.com/) to detect errors and potential problems in the code. 
+All code validated via the [W3C HTML Validation Service](https://validator.w3.org/), [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) and [JSHint](https://jshint.com/) to detect errors and potential problems in the code. 
 
-! outline errors (if any) and steps to resolve. Provide screenshots 
-
-Note: Due to multiple JavaScript files, each designed to provide functionality for specific features, .... 
+I chose to use multiple JavaScript files, each designed to provide functionality for specific features, to organise and modularise particular processes. As a result, I encountered some difficulties with referencing and parsing the scripts and a troublesome CORS error. After a series of debugging efforts, I realised I needed to run the program in a node.js environment. After installing node.js and a range of relevant packages, the CORS error disappeared, and I was able to proceed with improving the game's functionality. 
 
 #### HTML VALIDATION 
-<insert image here>
+![HTML Validation output](/docs/HTML-validator.png)
 
 
 #### CSS VALIDATION
-<insert image here>
+![CSS Validation output](/docs/CSS-validator.png)
 
 #### JavaScript VALIDATION 
-<insert image here>
+![JSLint Validation output](/docs/JSLint-output.png)
+</br>
+undefined variables are defined in questions.js
 
 
 #### LIGHTHOUSE TESTING 
@@ -134,7 +135,7 @@ These included:
 
 * Landing page
     *   Page loads correctly
-    *   User can clearly see and interact with the site
+    *   User can clearly see and interact with the site; button states change from active to hover to clicked.
     *   Clicking the 'Let's go!' button will start the game and direct the user to the next section - Choosing the level of difficulty. 
 
 * Navigation 
@@ -146,19 +147,19 @@ These included:
     * Clicking either 'easy' or 'hard' will load the respective questions in a randomised order each time. 
 
 * Question section 
-    * Questions and answer options (easy) / text area (hard) displayed correctly
-    * Answer options/text area is enabled once the question has loaded
+    * Questions and answer options are displayed correctly
+    * Answer options are enabled once the question has loaded
     * Question counter increments correctly with each question answered
-    * Selected answer will trigger the appropriate text banner (red = incorrect / green = correct)
+    * Selected answer will trigger the appropriate colour change to the button (red = incorrect and green = correct)
     * 'Next Question' icon is disabled until the user has submitted an answer
     * 'Next Question' icon enabled after the answer submitted
-    * Once the 'next question' icon has been clicked, the next question will be correctly loaded and continue           until all questions (easy = 15 questions / hard = 10 questions) in that section have been answered. 
+    * Once the 'next question' icon has been clicked, the next question will be correctly loaded and continue until all 10 questions have been answered. 
     * When all questions for the section have been answered, the results section will be triggered. 
 
 *   Results section 
     *   Section is rendered correctly 
     *   Questions answered correctly are counted in the back end and presented as a total to the user with the                 appropriate tribute and award icon
-    *   Verify the 'play again' button is enabled and will work as intended - to reload the website and direct the             user to the home page. 
+    *   Verify that the 'play again' button is enabled and will work as intended—to reload the website and direct the user to the home page. 
 
 #### BROWSER COMPATIBILITY
 This website has been manually tested on the browsers listed below, with additional testing via Lighthouse. 
@@ -167,12 +168,12 @@ This website has been manually tested on the browsers listed below, with additio
 - Firefox
 
 #### BUGS
-...
+The majority of the bugs were syntax errors and not calling the correct element within the functions. I also needed to refactor the logic to improve clarity, remove any redundancies, bloat and modularise for simplicity. CORS error was a major stumbling block until I ran the program in a node.js environment. 
 
 ***
 
 ### DEPLOYMENT
-This website was deployed to GitHub Pages. 
+This website was deployed to GitHub Pages June 2024. 
 ***
 
 ### CREDITS
